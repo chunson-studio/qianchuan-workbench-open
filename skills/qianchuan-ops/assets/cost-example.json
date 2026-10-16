@@ -1,0 +1,14 @@
+{
+  "kind": "boost_cpa",
+  "spend": "320",
+  "periods": [
+    {
+      "target": "20",
+      "orders": 5
+    },
+    {
+      "target": "30",
+      "orders": 5
+    }
+  ]
+}

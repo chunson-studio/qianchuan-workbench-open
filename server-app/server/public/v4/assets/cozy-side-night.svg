@@ -1,0 +1,34 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 360 820" role="img" aria-label="月下窗边熟睡猫咪">
+<defs>
+  <linearGradient id="wall" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#182641"/><stop offset="1" stop-color="#263a60"/></linearGradient>
+  <linearGradient id="window" x1="0" y1="0" x2="0" y2="1"><stop stop-color="#22375f"/><stop offset="1" stop-color="#102039"/></linearGradient>
+  <linearGradient id="cat" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#f5c67f"/><stop offset="1" stop-color="#cf8d50"/></linearGradient>
+  <radialGradient id="lamp" cx=".5" cy=".4" r=".7"><stop stop-color="#ffd98a" stop-opacity=".92"/><stop offset="1" stop-color="#ffba5b" stop-opacity=".1"/></radialGradient>
+  <filter id="glow" x="-80%" y="-80%" width="260%" height="260%"><feGaussianBlur stdDeviation="12"/></filter>
+</defs>
+<style>
+  .cat{animation:breathe 5.2s ease-in-out infinite}.tail{animation:tail 7s ease-in-out infinite;transform-box:fill-box;transform-origin:left center}.star{animation:twinkle 4.6s ease-in-out infinite}.star:nth-child(2n){animation-delay:-2s}.lamp{animation:lamp 5s ease-in-out infinite}.blink{animation:blink 9s infinite}
+  @keyframes breathe{50%{transform:translateY(-4px)}}@keyframes tail{50%{transform:rotate(5deg)}}@keyframes twinkle{50%{opacity:.35;transform:scale(.8)}}@keyframes lamp{50%{opacity:.78}}@keyframes blink{0%,48%,51%,100%{opacity:0}49%,50%{opacity:1}}
+  @media(prefers-reduced-motion:reduce){*{animation:none!important}}
+</style>
+<rect x="18" y="42" width="324" height="730" rx="42" fill="url(#wall)"/>
+<rect x="52" y="86" width="256" height="310" rx="22" fill="url(#window)" stroke="#6d86af" stroke-opacity=".28" stroke-width="4"/>
+<path d="M180 87v309M53 240h254" stroke="#7d94ba" stroke-opacity=".18" stroke-width="5"/>
+<circle cx="226" cy="150" r="52" fill="#f9efc0"/><circle cx="247" cy="131" r="52" fill="#24385e"/>
+<g fill="#d7e4ff" opacity=".88"><circle class="star" cx="94" cy="130" r="4"/><circle class="star" cx="127" cy="174" r="3"/><circle class="star" cx="281" cy="205" r="4"/><circle class="star" cx="100" cy="291" r="3"/><circle class="star" cx="263" cy="292" r="3"/></g>
+<path d="M45 411h270v31H45z" fill="#8b725d"/><rect x="34" y="440" width="292" height="112" rx="26" fill="#7b654f"/>
+<g class="lamp"><circle cx="282" cy="508" r="55" fill="url(#lamp)" filter="url(#glow)"/><path d="M264 478h36l13 39h-62Z" fill="#f7c46f"/><rect x="278" y="516" width="8" height="44" rx="4" fill="#ca9448"/><ellipse cx="282" cy="560" rx="28" ry="7" fill="#ab7a40"/></g>
+<g class="cat" transform="translate(57 470)">
+  <ellipse cx="122" cy="128" rx="102" ry="68" fill="url(#cat)"/>
+  <path d="M42 100 70 31l54 53M202 100l-25-69-53 53" fill="url(#cat)"/>
+  <path d="M57 83 71 50l28 26M188 83l-14-33-27 26" fill="#f2a8aa"/>
+  <ellipse cx="122" cy="106" rx="82" ry="56" fill="#fff5e8"/>
+  <path d="M85 106q14-15 29 0M132 106q14-15 29 0" fill="none" stroke="#44362d" stroke-width="6" stroke-linecap="round"/>
+  <ellipse class="blink" cx="100" cy="106" rx="17" ry="6" fill="#fff5e8"/><ellipse class="blink" cx="147" cy="106" rx="17" ry="6" fill="#fff5e8"/>
+  <path d="M116 121q7 8 14 0" fill="#e78c90"/><path d="M122 125q-4 16-18 12M123 125q5 16 18 12" fill="none" stroke="#44362d" stroke-width="4.5" stroke-linecap="round"/>
+  <ellipse cx="70" cy="163" rx="50" ry="32" fill="#fff5e8"/><ellipse cx="186" cy="163" rx="50" ry="32" fill="#fff5e8"/>
+  <path class="tail" d="M210 150q58 13 55 76" fill="none" stroke="#c88448" stroke-width="27" stroke-linecap="round"/>
+</g>
+<g fill="#6d8f77" opacity=".74"><ellipse cx="69" cy="658" rx="22" ry="58" transform="rotate(-24 69 658)"/><ellipse cx="108" cy="643" rx="20" ry="52" transform="rotate(17 108 643)"/><ellipse cx="291" cy="680" rx="22" ry="58" transform="rotate(20 291 680)"/></g>
+<g fill="#e9f1ff" opacity=".55"><ellipse cx="76" cy="756" rx="62" ry="26"/><ellipse cx="137" cy="750" rx="78" ry="34"/><ellipse cx="235" cy="756" rx="74" ry="30"/></g>
+</svg>

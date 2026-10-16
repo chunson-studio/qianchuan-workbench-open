@@ -1,0 +1,42 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 2048 1024" role="img" aria-label="工作台装饰轨道">
+  <defs>
+    <linearGradient id="space" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#061018"/>
+      <stop offset="1" stop-color="#071923"/>
+    </linearGradient>
+    <radialGradient id="halo" cx="77%" cy="45%" r="55%">
+      <stop offset="0" stop-color="#22d9f4" stop-opacity=".2"/>
+      <stop offset=".55" stop-color="#0a7692" stop-opacity=".07"/>
+      <stop offset="1" stop-color="#061018" stop-opacity="0"/>
+    </radialGradient>
+    <linearGradient id="cyan" x1="0" y1="0" x2="1" y2="1">
+      <stop stop-color="#f4fbff"/>
+      <stop offset=".28" stop-color="#7eeaff"/>
+      <stop offset=".65" stop-color="#00b9dc"/>
+      <stop offset="1" stop-color="#12657e" stop-opacity=".2"/>
+    </linearGradient>
+    <filter id="glow" x="-30%" y="-30%" width="160%" height="160%">
+      <feGaussianBlur stdDeviation="7" result="blur"/>
+      <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+  </defs>
+  <rect width="2048" height="1024" fill="url(#space)"/>
+  <rect width="2048" height="1024" fill="url(#halo)"/>
+  <g fill="none" stroke-linecap="round" transform="translate(1560 470) rotate(-18)">
+    <ellipse rx="560" ry="185" stroke="#0c7c9a" stroke-width="3" opacity=".46" transform="rotate(-28)"/>
+    <ellipse rx="540" ry="178" stroke="url(#cyan)" stroke-width="22" opacity=".82" transform="rotate(13)" filter="url(#glow)"/>
+    <ellipse rx="470" ry="144" stroke="#d9f4ff" stroke-width="7" opacity=".88" transform="rotate(37)"/>
+    <ellipse rx="585" ry="202" stroke="#00d8f4" stroke-width="4" opacity=".8" transform="rotate(-52)"/>
+    <ellipse rx="410" ry="120" stroke="#3bdff6" stroke-width="8" opacity=".72" transform="rotate(-16)"/>
+    <path d="M-650 60C-390-210 180-260 660-40" stroke="#12a7c5" stroke-width="2" opacity=".7"/>
+    <path d="M-560 250C-260 30 300-30 650 120" stroke="#2be2f8" stroke-width="2" opacity=".65"/>
+  </g>
+  <g fill="#d9fbff" filter="url(#glow)">
+    <circle cx="1210" cy="190" r="5"/><circle cx="1355" cy="695" r="4"/><circle cx="1510" cy="520" r="6"/>
+    <circle cx="1732" cy="215" r="4"/><circle cx="1880" cy="615" r="5"/>
+  </g>
+  <g fill="none" stroke="#1ccde8" stroke-width="2" opacity=".4">
+    <path d="M1010 430C1070 160 1330-40 1600-120"/>
+    <path d="M1100 800C1380 730 1660 720 1940 820"/>
+  </g>
+</svg>

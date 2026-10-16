@@ -1,0 +1,17 @@
+{
+  "sample": true,
+  "ok": true,
+  "channel": "synthetic-example",
+  "advertising_writes": 0,
+  "binding": {"advertiser_id":"10001","primary_ad_id":"20001","date":"2026-01-01"},
+  "pool": "调控中",
+  "complete": true,
+  "total": 2,
+  "visible_rows": 2,
+  "headers": ["任务名称","调控状态","调控预算(元)","调控消耗","调控支付ROI","调控成交订单数"],
+  "tasks": [
+    {"task_id":"30001","raw_cells":["虚构示例A\nID: 30001","调控中","100","12","3.20","2"]},
+    {"task_id":"30002","raw_cells":["虚构示例B\nID: 30002","调控中","200","9","—","0"]}
+  ],
+  "captured_at": "2026-01-01T00:00:00.000Z"
+}

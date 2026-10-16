@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 240" fill="none">
+  <defs>
+    <linearGradient id="silk" x1="360" y1="20" x2="410" y2="160" gradientUnits="userSpaceOnUse"><stop stop-color="#a6bca3"/><stop offset=".42" stop-color="#375b48"/><stop offset=".72" stop-color="#123e33"/><stop offset="1" stop-color="#70957e"/></linearGradient>
+    <linearGradient id="linen" x1="580" y1="0" x2="530" y2="180" gradientUnits="userSpaceOnUse"><stop stop-color="#f6ecd0"/><stop offset=".55" stop-color="#cab785"/><stop offset=".8" stop-color="#8f7950"/><stop offset="1" stop-color="#e7dbb9"/></linearGradient>
+    <radialGradient id="sun"><stop stop-color="#eaddb8"/><stop offset="1" stop-color="#b5a073"/></radialGradient>
+  </defs>
+  <circle cx="650" cy="62" r="42" fill="url(#sun)"/>
+  <path d="M80 132C207 166 267 50 421 44 575 38 636 164 824 89v62C650 207 553 86 423 97 294 108 192 181 80 132Z" fill="url(#silk)"/>
+  <path d="M381-14C477 89 563 32 664 69c77 28 84 140 157 126v-46c-63 15-77-76-137-94C545 13 504 61 425-14Z" fill="url(#linen)"/>
+  <path d="M165 150C310 145 338 62 462 110s158 152 359 107v-51c-155 43-194-51-333-83-139-32-166 59-323 67Z" fill="url(#silk)" opacity=".92"/>
+  <path d="M80 132c127 34 187-82 341-88m-242 110c132-13 164-86 303-51m-99-109c96 103 182 46 283 83" stroke="#e2d8b7" stroke-opacity=".65" stroke-width="1"/>
+</svg>

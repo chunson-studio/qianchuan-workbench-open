@@ -1,0 +1,272 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://openhanako.local/schemas/qianchuan-account-profile.schema.json",
+  "title": "Qianchuan Account Profile",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["profile_version", "account", "metrics", "flow", "funnel_baseline", "channel_baseline", "sample_thresholds", "comparability", "safety", "calibration"],
+  "properties": {
+    "profile_version": {"const": "2.0"},
+    "account": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["id", "name"],
+      "properties": {
+        "id": {"type": "string", "minLength": 1},
+        "name": {"type": "string", "minLength": 1},
+        "aavid": {"type": ["string", "null"]},
+        "anchor_id": {"type": ["string", "null"]},
+        "primary_ad_id": {"type": ["string", "null"]},
+        "timezone": {"type": "string", "default": "Asia/Shanghai"}
+      }
+    },
+    "metrics": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["roi_basis", "break_even_roi"],
+      "properties": {
+        "roi_basis": {
+          "enum": ["payment", "platform_net_1h", "final_settlement", "chengfang_comprehensive", "unknown"],
+          "default": "unknown"
+        },
+        "roi_migration_note": {
+          "type": ["string", "null"],
+          "description": "旧 settlement_net 迁移为 platform_net_1h 时保留的审计说明；不得据旧名称推断最终结算。"
+        },
+        "break_even_roi": {"type": ["number", "null"], "exclusiveMinimum": 0},
+        "profit_roi": {"type": ["number", "null"], "exclusiveMinimum": 0},
+        "risk_floor_roi": {"type": ["number", "null"], "exclusiveMinimum": 0},
+        "avg_order_price": {"type": ["number", "null"], "minimum": 0}
+      }
+    },
+    "flow": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["unit", "window_days", "slots", "sustainable_capacity"],
+      "properties": {
+        "unit": {"const": "yuan_per_hour"},
+        "window_days": {"type": "integer", "minimum": 7, "maximum": 30},
+        "slots": {
+          "type": "object",
+          "additionalProperties": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": ["label", "mean", "median", "p25", "samples"],
+            "properties": {
+              "label": {"type": "string"},
+              "mean": {"type": ["number", "null"], "minimum": 0},
+              "median": {"type": ["number", "null"], "minimum": 0},
+              "p25": {"type": ["number", "null"], "minimum": 0},
+              "samples": {"type": "integer", "minimum": 0}
+            }
+          }
+        },
+        "sustainable_capacity": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": ["basic", "assist", "total"],
+          "properties": {
+            "basic": {"$ref": "#/$defs/calibrated_nonnegative_value_with_sample"},
+            "assist": {"$ref": "#/$defs/calibrated_nonnegative_value_with_sample"},
+            "total": {"$ref": "#/$defs/calibrated_nonnegative_value_with_sample"}
+          }
+        }
+      }
+    },
+    "funnel_baseline": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["window_days", "stages"],
+      "properties": {
+        "window_days": {"type": "integer", "minimum": 1, "maximum": 90, "default": 14},
+        "stages": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": ["paid_entry_rate", "stay_rate", "product_click_rate", "payment_rate", "settlement_rate", "refund_rate"],
+          "properties": {
+            "paid_entry_rate": {"$ref": "#/$defs/calibrated_rate_with_sample"},
+            "stay_rate": {"$ref": "#/$defs/calibrated_rate_with_sample"},
+            "product_click_rate": {"$ref": "#/$defs/calibrated_rate_with_sample"},
+            "payment_rate": {"$ref": "#/$defs/calibrated_rate_with_sample"},
+            "settlement_rate": {"$ref": "#/$defs/calibrated_rate_with_sample"},
+            "refund_rate": {"$ref": "#/$defs/calibrated_rate_with_sample"}
+          }
+        }
+      }
+    },
+    "channel_baseline": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["window_days", "by_code"],
+      "properties": {
+        "window_days": {"type": "integer", "minimum": 1, "maximum": 90, "default": 14},
+        "by_code": {
+          "type": "object",
+          "description": "键必须是接口返回的真实渠道 code，不为未知渠道补写 Feed、自然流或泛流量标签。",
+          "additionalProperties": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": ["watch_share_pct", "pay_share_pct", "sample_size", "source", "updated_at"],
+            "properties": {
+              "watch_share_pct": {"type": ["number", "null"], "minimum": 0, "maximum": 100},
+              "pay_share_pct": {
+                "type": ["number", "null"],
+                "minimum": 0,
+                "maximum": 100,
+                "description": "成交人数占比；上游只有成交金额、没有成交人数时必须为 null。"
+              },
+              "sample_size": {"type": ["integer", "null"], "minimum": 0},
+              "source": {"type": ["string", "null"]},
+              "updated_at": {"type": ["string", "null"], "format": "date-time"}
+            }
+          }
+        }
+      }
+    },
+    "sample_thresholds": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["min_spend_yuan", "min_clicks", "min_orders"],
+      "properties": {
+        "min_spend_yuan": {"$ref": "#/$defs/calibrated_nonnegative_value"},
+        "min_clicks": {"$ref": "#/$defs/calibrated_nonnegative_integer"},
+        "min_orders": {"$ref": "#/$defs/calibrated_nonnegative_integer"}
+      }
+    },
+    "comparability": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["anchor_ids", "product_ids", "price_mechanisms", "time_slots"],
+      "properties": {
+        "anchor_ids": {"$ref": "#/$defs/calibrated_string_list"},
+        "product_ids": {"$ref": "#/$defs/calibrated_string_list"},
+        "price_mechanisms": {"$ref": "#/$defs/calibrated_string_list"},
+        "time_slots": {"$ref": "#/$defs/calibrated_string_list"}
+      }
+    },
+    "schedule": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["days", "start", "end"],
+        "properties": {
+          "days": {"type": "array", "items": {"type": "integer", "minimum": 1, "maximum": 7}, "minItems": 1},
+          "start": {"type": "string", "pattern": "^(?:[01][0-9]|2[0-3]):[0-5][0-9]$"},
+          "end": {"type": "string", "pattern": "^(?:[01][0-9]|2[0-3]):[0-5][0-9]$"}
+        }
+      }
+    },
+    "bidding": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "roi_lock_minutes": {"type": "integer", "minimum": 1},
+        "max_single_change_ratio": {"type": "number", "exclusiveMinimum": 0, "maximum": 1}
+      }
+    },
+    "safety": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["mode"],
+      "properties": {
+        "mode": {"enum": ["agent_decides", "recommendation_only", "confirm_writes", "auto_guarded"]},
+        "allow_plan_write": {"type": "boolean"},
+        "allow_boost_write": {"type": "boolean"},
+        "allow_material_write": {"type": "boolean"},
+        "protected_object_ids": {"type": "array", "items": {"type": "string"}, "uniqueItems": true},
+        "manual_disabled_object_ids": {"type": "array", "items": {"type": "string"}, "uniqueItems": true}
+      }
+    },
+    "calibration": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["status", "account_specific", "sources"],
+      "properties": {
+        "status": {"enum": ["uncalibrated", "draft", "confirmed", "stale"]},
+        "account_specific": {"const": true},
+        "calibrated_at": {"type": ["string", "null"], "format": "date-time"},
+        "confirmed_by": {"type": ["string", "null"]},
+        "sources": {
+          "type": "array",
+          "minItems": 1,
+          "items": {"enum": ["official", "runtime_config", "historical_calibration", "human_confirmed", "workspace_override", "task_override"]},
+          "uniqueItems": true
+        },
+        "notes": {"type": "string"}
+      }
+    }
+  },
+  "$defs": {
+    "source_and_time": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["source", "updated_at"],
+      "properties": {
+        "source": {"type": ["string", "null"]},
+        "updated_at": {"type": ["string", "null"], "format": "date-time"}
+      }
+    },
+    "calibrated_rate_with_sample": {
+      "type": "object",
+      "description": "与实时漏斗一致的百分比数值（0~100），例如 12.5 表示 12.5%。",
+      "additionalProperties": false,
+      "required": ["value", "sample_size", "source", "updated_at"],
+      "properties": {
+        "value": {"type": ["number", "null"], "minimum": 0, "maximum": 100},
+        "sample_size": {"type": ["integer", "null"], "minimum": 0},
+        "source": {"type": ["string", "null"]},
+        "updated_at": {"type": ["string", "null"], "format": "date-time"}
+      }
+    },
+    "calibrated_nonnegative_value_with_sample": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["value", "sample_size", "source", "updated_at"],
+      "properties": {
+        "value": {"type": ["number", "null"], "minimum": 0},
+        "sample_size": {"type": ["integer", "null"], "minimum": 0},
+        "source": {"type": ["string", "null"]},
+        "updated_at": {"type": ["string", "null"], "format": "date-time"}
+      }
+    },
+    "calibrated_nonnegative_value": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["value", "source", "updated_at"],
+      "properties": {
+        "value": {"type": ["number", "null"], "minimum": 0},
+        "source": {"type": ["string", "null"]},
+        "updated_at": {"type": ["string", "null"], "format": "date-time"}
+      }
+    },
+    "calibrated_nonnegative_integer": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["value", "source", "updated_at"],
+      "properties": {
+        "value": {"type": ["integer", "null"], "minimum": 0},
+        "source": {"type": ["string", "null"]},
+        "updated_at": {"type": ["string", "null"], "format": "date-time"}
+      }
+    },
+    "calibrated_string_list": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["value", "source", "updated_at"],
+      "properties": {
+        "value": {
+          "type": ["array", "null"],
+          "items": {"type": "string"},
+          "uniqueItems": true
+        },
+        "source": {"type": ["string", "null"]},
+        "updated_at": {"type": ["string", "null"], "format": "date-time"}
+      }
+    }
+  },
+  "allOf": [{
+    "if": {"properties": {"calibration": {"properties": {"status": {"const": "confirmed"}}, "required": ["status"]}}},
+    "then": {"properties": {"metrics": {"properties": {"break_even_roi": {"type": "number", "exclusiveMinimum": 0}}, "required": ["break_even_roi"]}}}
+  }]
+}

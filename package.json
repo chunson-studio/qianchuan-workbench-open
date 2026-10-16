@@ -1,0 +1,21 @@
+{
+  "name": "qianchuan-workbench-open",
+  "version": "0.1.0",
+  "private": true,
+  "description": "千川通用执行工作台：浏览器、API、CLI、批量操作与后台恢复，不含私有账户和投放策略",
+  "main": "src/index.cjs",
+  "license": "MIT",
+  "engines": {
+    "node": ">=22.5.0"
+  },
+  "scripts": {
+    "test": "node tools/test-public.cjs",
+    "setup": "node tools/setup.cjs --json",
+    "check": "node tools/setup.cjs --check --json",
+    "start": "node tools/setup.cjs --json",
+    "read": "node examples/read-current-page.cjs"
+  },
+  "dependencies": {
+    "playwright-core": "1.63.0"
+  }
+}

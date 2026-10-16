@@ -1,0 +1,35 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 2100 620" role="img" aria-label="月夜云朵睡觉小狗主视觉">
+<defs>
+  <linearGradient id="sky" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#102342"/><stop offset=".58" stop-color="#19335d"/><stop offset="1" stop-color="#2d4268"/></linearGradient>
+  <linearGradient id="cloud" x1="0" y1="0" x2="0" y2="1"><stop stop-color="#f4f6ff"/><stop offset="1" stop-color="#cbd8f0"/></linearGradient>
+  <linearGradient id="dog" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#ffd88a"/><stop offset="1" stop-color="#d9954d"/></linearGradient>
+  <radialGradient id="moonGlow"><stop stop-color="#fff1b4" stop-opacity=".7"/><stop offset="1" stop-color="#fff1b4" stop-opacity="0"/></radialGradient>
+  <filter id="soft" x="-40%" y="-40%" width="180%" height="180%"><feDropShadow dx="0" dy="18" stdDeviation="22" flood-color="#071327" flood-opacity=".28"/></filter>
+</defs>
+<style>
+  .clouds{animation:drift 21s ease-in-out infinite alternate}.dog{animation:breathe 5.4s ease-in-out infinite}.ear{animation:ear 7s ease-in-out infinite;transform-box:fill-box;transform-origin:top center}.blink{animation:blink 9s infinite}.star{animation:twinkle 4.5s ease-in-out infinite}.star:nth-child(odd){animation-delay:-2.2s}.glow{animation:glow 5s ease-in-out infinite alternate}
+  @keyframes drift{to{transform:translateX(20px)}}@keyframes breathe{50%{transform:translateY(-4px)}}@keyframes ear{50%{transform:rotate(3deg)}}@keyframes blink{0%,48%,51%,100%{opacity:0}49%,50%{opacity:1}}@keyframes twinkle{50%{opacity:.28;transform:scale(.75)}}@keyframes glow{to{opacity:.78}}
+  @media(prefers-reduced-motion:reduce){*{animation:none!important}}
+</style>
+<rect width="2100" height="620" rx="46" fill="url(#sky)"/>
+<ellipse class="glow" cx="1690" cy="126" rx="162" ry="162" fill="url(#moonGlow)"/>
+<circle cx="1690" cy="126" r="86" fill="#fff0b4"/><circle cx="1725" cy="94" r="88" fill="#20385f"/>
+<g fill="#dfe8ff" opacity=".9"><circle class="star" cx="1140" cy="82" r="6"/><circle class="star" cx="1285" cy="126" r="4"/><circle class="star" cx="1450" cy="72" r="5"/><circle class="star" cx="1882" cy="176" r="5"/><circle class="star" cx="2000" cy="98" r="4"/><path class="star" d="m1370 160 7 17 18 2-14 12 4 18-15-9-15 9 4-18-14-12 18-2z"/></g>
+<g class="clouds" fill="#536b95" opacity=".38"><ellipse cx="340" cy="184" rx="165" ry="82"/><ellipse cx="500" cy="160" rx="196" ry="102"/><ellipse cx="680" cy="194" rx="146" ry="73"/><ellipse cx="980" cy="128" rx="128" ry="65"/></g>
+<g transform="translate(1170 200)" filter="url(#soft)">
+  <g fill="url(#cloud)"><ellipse cx="235" cy="236" rx="210" ry="100"/><ellipse cx="430" cy="194" rx="248" ry="142"/><ellipse cx="675" cy="234" rx="215" ry="108"/><ellipse cx="528" cy="290" rx="345" ry="105"/></g>
+  <g class="dog" transform="translate(315 55)">
+    <ellipse cx="187" cy="216" rx="169" ry="97" fill="url(#dog)"/>
+    <ellipse class="ear" cx="80" cy="126" rx="56" ry="101" fill="#cd8744" transform="rotate(16 80 126)"/><ellipse class="ear" cx="293" cy="126" rx="56" ry="101" fill="#cd8744" transform="rotate(-16 293 126)"/>
+    <ellipse cx="187" cy="155" rx="122" ry="96" fill="#fff3e2"/>
+    <path d="M139 153q18-20 37 0M199 153q18-20 37 0" fill="none" stroke="#3d3029" stroke-width="8" stroke-linecap="round"/>
+    <ellipse class="blink" cx="157" cy="153" rx="24" ry="7" fill="#fff3e2"/><ellipse class="blink" cx="218" cy="153" rx="24" ry="7" fill="#fff3e2"/>
+    <ellipse cx="187" cy="176" rx="17" ry="13" fill="#3d3029"/><path d="M187 190q-8 24-34 12M188 190q9 24 34 12" fill="none" stroke="#3d3029" stroke-width="7" stroke-linecap="round"/>
+    <ellipse cx="104" cy="203" rx="23" ry="14" fill="#f1a895" opacity=".48"/><ellipse cx="270" cy="203" rx="23" ry="14" fill="#f1a895" opacity=".48"/>
+    <ellipse cx="99" cy="270" rx="78" ry="44" fill="#fff3e2"/><ellipse cx="277" cy="270" rx="78" ry="44" fill="#fff3e2"/>
+  </g>
+</g>
+<g transform="translate(285 255)"><circle cx="125" cy="110" r="102" fill="#f1bb69" opacity=".12"/><path d="M42 100h166L178 34H72Z" fill="#f4d59c"/><path d="M65 90h120L165 50H86Z" fill="#fff0c7"/><rect x="113" y="100" width="23" height="158" rx="10" fill="#8b684d"/><ellipse cx="125" cy="263" rx="76" ry="18" fill="#6d4f3c"/></g>
+<path d="M0 525c325-44 480 38 760-3s470 40 770-6 420-16 570 4v100H0Z" fill="#182b48" opacity=".7"/>
+<g fill="#56745e" opacity=".55"><ellipse cx="1190" cy="478" rx="28" ry="73" transform="rotate(-24 1190 478)"/><ellipse cx="1250" cy="455" rx="25" ry="65" transform="rotate(20 1250 455)"/><ellipse cx="1990" cy="470" rx="30" ry="78" transform="rotate(20 1990 470)"/></g>
+</svg>

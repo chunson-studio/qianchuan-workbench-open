@@ -1,0 +1,29 @@
+<!doctype html>
+<html lang="zh-CN"><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<meta http-equiv="Content-Security-Policy" content="default-src 'none'; style-src 'unsafe-inline'; script-src 'unsafe-inline'; connect-src 'none'; img-src 'none'; form-action 'none'; base-uri 'none'">
+<title>千川基础数据查看器</title>
+<style>
+  :root{font-family:system-ui,sans-serif;color:#253438;background:#f3f6f5}body{max-width:1200px;margin:48px auto;padding:0 24px}h1{font-size:28px;margin:0 0 12px}p{line-height:1.7;color:#526367}.card{background:white;border:1px solid #dce5e1;border-radius:14px;padding:24px;margin:24px 0}.meta{display:flex;flex-wrap:wrap;gap:12px;margin:20px 0}.tag{background:#e6f2ed;padding:8px 12px;border-radius:8px}#error{color:#a13e30;white-space:pre-wrap}.scroll{overflow:auto}table{border-collapse:collapse;width:100%;font-size:14px}th,td{text-align:left;padding:13px;border-bottom:1px solid #e6ece9;white-space:pre-wrap;min-width:100px}th{background:#f0f5f3}input{font-size:15px}small{color:#697a74}#status{font-weight:600}
+</style>
+<h1>千川基础数据查看器</h1>
+<p>选择读取工具导出的 JSON 文件，查看原始字段与数据完整性。文件只在本页解析，不上传。</p>
+<section class="card"><label for="file">选择数据文件 </label><input id="file" type="file" accept=".json,application/json"><p id="status" role="status">尚未选择文件</p><div id="error" role="alert"></div><div id="meta" class="meta"></div></section>
+<section class="card scroll"><table id="table"><thead></thead><tbody></tbody></table><p id="empty">可以先选择 examples/sample-pool.json 查看虚构示例。</p></section>
+<small>这里展示的是文件中的采集结果，不代表当前直播状态。ROI 列保留原名称，不互相换算。</small>
+<script>
+const $=id=>document.getElementById(id);
+function clear(){ $('meta').replaceChildren();$('table').tHead.replaceChildren();$('table').tBodies[0].replaceChildren();$('error').textContent='';$('empty').textContent=''; }
+function tag(label,value){ const e=document.createElement('span');e.className='tag';e.textContent=label+'：'+value;$('meta').append(e); }
+function render(data){
+  if(!data||!Array.isArray(data.headers)||!data.headers.length||data.headers.some(h=>typeof h!=='string')||!Array.isArray(data.tasks)||data.tasks.length>10000)throw Error('不是受支持的任务表文件。');
+  const ids=new Set();
+  for(const row of data.tasks){if(!row||typeof row.task_id!=='string'||ids.has(row.task_id)||!Array.isArray(row.raw_cells)||row.raw_cells.length!==data.headers.length||row.raw_cells.some(c=>typeof c!=='string'))throw Error('任务ID重复或表格字段不完整。');ids.add(row.task_id);}
+  if(!Number.isInteger(data.total)||data.total<0||typeof data.complete!=='boolean'||data.tasks.length>data.total||(data.complete&&data.tasks.length!==data.total))throw Error('完整性声明与任务数量不一致。');
+  tag('数据类型',data.sample===true?'虚构示例':'用户导入');tag('采集时间',data.captured_at||'未知');tag('任务池',data.pool||'未知');tag('已读取',data.tasks.length);tag('总数',data.total);tag('完整性',data.complete?'完整':'部分数据');
+  const header=document.createElement('tr');for(const value of data.headers){const th=document.createElement('th');th.textContent=value||' ';header.append(th);}$('table').tHead.append(header);
+  for(const row of data.tasks){const tr=document.createElement('tr');for(const value of row.raw_cells){const td=document.createElement('td');td.textContent=value;tr.append(td);}$('table').tBodies[0].append(tr);}
+  if(!data.tasks.length)$('empty').textContent=data.complete&&data.empty_verified===true?'已核验空池':'没有可展示行；不能据此认定空池。';
+  $('status').textContent=data.sample===true?'虚构示例已载入':'文件已载入';
+}
+$('file').addEventListener('change',async event=>{clear();const file=event.target.files[0];if(!file){$('status').textContent='尚未选择文件';return;}try{if(file.size>10*1024*1024)throw Error('文件超过10MB，请选择较小的导出文件。');const data=JSON.parse(await file.text());render(data);}catch(error){clear();$('status').textContent='读取失败';$('error').textContent=error.message;}});
+</script></html>

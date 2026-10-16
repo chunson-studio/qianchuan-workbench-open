@@ -1,0 +1,2 @@
+# Keep text line endings consistent across platforms; binaries stay untouched.
+* text=auto eol=lf

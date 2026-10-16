@@ -1,0 +1,45 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 2100 620" role="img" aria-label="温暖日间云朵猫狗装饰">
+<defs>
+  <linearGradient id="sky" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#eef8ff"/><stop offset=".52" stop-color="#dcecff"/><stop offset="1" stop-color="#fff6e8"/></linearGradient>
+  <linearGradient id="hill" x1="0" y1="0" x2="0" y2="1"><stop stop-color="#cde8b1"/><stop offset="1" stop-color="#9bc77c"/></linearGradient>
+  <linearGradient id="furDog" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#ffd98a"/><stop offset="1" stop-color="#e8a85c"/></linearGradient>
+  <linearGradient id="furCat" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#9aa2aa"/><stop offset="1" stop-color="#5f6670"/></linearGradient>
+  <filter id="soft" x="-30%" y="-30%" width="160%" height="160%"><feDropShadow dx="0" dy="12" stdDeviation="16" flood-color="#7da4c7" flood-opacity=".18"/></filter>
+</defs>
+<style>
+  .cloudA{animation:driftA 17s ease-in-out infinite alternate}.cloudB{animation:driftB 21s ease-in-out infinite alternate}.pets{animation:breathe 4.8s ease-in-out infinite}.leaf{animation:leaf 6s ease-in-out infinite;transform-box:fill-box;transform-origin:bottom center}.blink{animation:blink 7.2s infinite}.blink2{animation:blink 8.7s 1.4s infinite}
+  @keyframes driftA{to{transform:translateX(20px)}}@keyframes driftB{to{transform:translateX(-18px)}}@keyframes breathe{50%{transform:translateY(-5px)}}@keyframes leaf{50%{transform:rotate(3deg)}}@keyframes blink{0%,45%,49%,100%{opacity:0}46%,48%{opacity:1}}
+  @media(prefers-reduced-motion:reduce){*{animation:none!important}}
+</style>
+<rect width="2100" height="620" rx="44" fill="url(#sky)"/>
+<g class="cloudA" opacity=".96" fill="#fff"><ellipse cx="220" cy="205" rx="120" ry="72"/><ellipse cx="340" cy="190" rx="155" ry="92"/><ellipse cx="490" cy="220" rx="126" ry="75"/><ellipse cx="840" cy="150" rx="128" ry="72"/><ellipse cx="960" cy="180" rx="145" ry="84"/></g>
+<g class="cloudB" opacity=".82" fill="#fff"><ellipse cx="1200" cy="190" rx="130" ry="75"/><ellipse cx="1320" cy="170" rx="170" ry="96"/><ellipse cx="1475" cy="208" rx="125" ry="72"/><ellipse cx="1790" cy="145" rx="116" ry="70"/></g>
+<circle cx="1790" cy="96" r="50" fill="#ffd45b" opacity=".95"/><g stroke="#ffd45b" stroke-width="10" stroke-linecap="round" opacity=".8"><path d="M1790 18v-30"/><path d="M1790 204v30"/><path d="M1697 96h-30"/><path d="M1913 96h30"/><path d="m1723 29-22-22"/><path d="m1857 163 22 22"/></g>
+<path d="M0 475C290 430 380 520 650 476s410-18 630 0 485-66 820-14V620H0Z" fill="#e8f5dd"/><path d="M0 535c290-55 470 50 760-5s460 58 750 0 430-10 590 0v90H0Z" fill="url(#hill)" opacity=".72"/>
+<g fill="#6eaa68" opacity=".96"><ellipse class="leaf" cx="70" cy="430" rx="32" ry="74" transform="rotate(-24 70 430)"/><ellipse class="leaf" cx="128" cy="408" rx="30" ry="70" transform="rotate(18 128 408)"/><ellipse class="leaf" cx="195" cy="452" rx="26" ry="62" transform="rotate(34 195 452)"/><ellipse class="leaf" cx="1980" cy="430" rx="34" ry="78" transform="rotate(20 1980 430)"/><ellipse class="leaf" cx="2036" cy="456" rx="28" ry="65" transform="rotate(-20 2036 456)"/></g>
+<g fill="#fff8d8"><circle cx="110" cy="510" r="10"/><circle cx="92" cy="510" r="10"/><circle cx="101" cy="493" r="10"/><circle cx="101" cy="527" r="10"/><circle cx="2000" cy="520" r="10"/><circle cx="1982" cy="520" r="10"/><circle cx="1991" cy="503" r="10"/><circle cx="1991" cy="537" r="10"/></g>
+<g class="pets" filter="url(#soft)" transform="translate(1510 278)">
+  <g id="cat">
+    <ellipse cx="135" cy="193" rx="108" ry="82" fill="url(#furCat)"/>
+    <path d="M55 135 78 55l62 60M213 135l-22-80-61 60" fill="url(#furCat)"/>
+    <path d="M70 116 84 76l30 30M199 116l-14-40-30 30" fill="#f5b5b7"/>
+    <ellipse cx="135" cy="154" rx="89" ry="70" fill="#f8f5ef"/>
+    <path d="M101 149q15-16 30 0M151 149q15-16 30 0" fill="none" stroke="#3d4148" stroke-width="7" stroke-linecap="round"/>
+    <ellipse class="blink" cx="116" cy="149" rx="18" ry="6" fill="#f8f5ef"/><ellipse class="blink" cx="166" cy="149" rx="18" ry="6" fill="#f8f5ef"/>
+    <path d="M129 165q7 8 14 0" fill="#e98d91"/><path d="M135 169q-4 18-21 13M136 169q5 18 21 13" fill="none" stroke="#3d4148" stroke-width="5" stroke-linecap="round"/>
+    <ellipse cx="84" cy="177" rx="18" ry="11" fill="#f5b6b2" opacity=".55"/><ellipse cx="186" cy="177" rx="18" ry="11" fill="#f5b6b2" opacity=".55"/>
+    <ellipse cx="74" cy="232" rx="49" ry="35" fill="#f8f5ef"/><ellipse cx="193" cy="232" rx="49" ry="35" fill="#f8f5ef"/>
+  </g>
+  <g id="dog" transform="translate(220 4)">
+    <ellipse cx="143" cy="188" rx="114" ry="86" fill="url(#furDog)"/>
+    <ellipse cx="54" cy="130" rx="45" ry="84" fill="#d9934c" transform="rotate(18 54 130)"/><ellipse cx="232" cy="130" rx="45" ry="84" fill="#d9934c" transform="rotate(-18 232 130)"/>
+    <ellipse cx="143" cy="152" rx="91" ry="75" fill="#fff7e9"/>
+    <ellipse cx="112" cy="148" rx="8" ry="10" fill="#3f332c"/><ellipse cx="174" cy="148" rx="8" ry="10" fill="#3f332c"/>
+    <ellipse class="blink2" cx="112" cy="148" rx="15" ry="6" fill="#fff7e9"/><ellipse class="blink2" cx="174" cy="148" rx="15" ry="6" fill="#fff7e9"/>
+    <ellipse cx="143" cy="166" rx="13" ry="10" fill="#3e3028"/><path d="M143 176q-6 18-25 9M144 176q7 18 25 9" fill="none" stroke="#3e3028" stroke-width="5" stroke-linecap="round"/>
+    <path d="M137 185q8 20 17 0" fill="#ef8885"/>
+    <ellipse cx="82" cy="180" rx="18" ry="11" fill="#f3ae9b" opacity=".5"/><ellipse cx="204" cy="180" rx="18" ry="11" fill="#f3ae9b" opacity=".5"/>
+    <ellipse cx="80" cy="238" rx="53" ry="36" fill="#fff7e9"/><ellipse cx="207" cy="238" rx="53" ry="36" fill="#fff7e9"/>
+  </g>
+</g>
+</svg>

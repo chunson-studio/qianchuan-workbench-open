@@ -1,0 +1,25 @@
+'use strict';
+require('./setup-runtime.cjs');
+const test = require('node:test');
+const assert = require('node:assert/strict');
+const fs = require('node:fs');
+const path = require('node:path');
+const { planSync, applySync } = require('../tools/sync-qianchuan-skill.cjs');
+test('同步保留原文并逐文件回读，拒绝旧计划和个人额外文件', () => {
+  const base = fs.mkdtempSync(path.join(process.env.QC_RUNTIME_CONFIG_ROOT, 'sync-'));
+  const source = path.join(base, 'source'), target = path.join(base, 'target'), backups = path.join(base, 'backups');
+  fs.mkdirSync(source); fs.mkdirSync(target);
+  fs.writeFileSync(path.join(source, 'SKILL.md'), 'current'); fs.writeFileSync(path.join(target, 'SKILL.md'), 'old');
+  let plan = planSync(source, target);
+  fs.writeFileSync(path.join(target, 'SKILL.md'), 'user edit');
+  assert.throws(() => applySync(source, target, plan.digest, backups), /sync_plan_changed/);
+  assert.equal(fs.readFileSync(path.join(target, 'SKILL.md'), 'utf8'), 'user edit');
+  plan = planSync(source, target);
+  const result = applySync(source, target, plan.digest, backups);
+  assert.equal(result.verified, true); assert.equal(result.changed, 1);
+  assert.equal(fs.readFileSync(path.join(result.backup, 'before/SKILL.md'), 'utf8'), 'user edit');
+  assert.equal(planSync(source, target).changes.length, 0);
+  fs.writeFileSync(path.join(target, 'personal.md'), 'keep'); plan = planSync(source, target);
+  assert.throws(() => applySync(source, target, plan.digest, backups), /target_extra_files_require_merge/);
+  assert.equal(fs.readFileSync(path.join(target, 'personal.md'), 'utf8'), 'keep');
+});

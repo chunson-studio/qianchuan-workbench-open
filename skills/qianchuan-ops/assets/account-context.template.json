@@ -1,0 +1,45 @@
+{
+  "schema_version": 2,
+  "task": {
+    "mode": "offline_analysis",
+    "question": null,
+    "business_date": null,
+    "timezone": "Asia/Shanghai"
+  },
+  "account": {
+    "account_id": null,
+    "product": null,
+    "optimization_goal": null
+  },
+  "inputs": {
+    "data_files": [],
+    "strategy_document": null,
+    "external_source_library": null
+  },
+  "objectives": {
+    "business_target": null,
+    "budget_limit": null,
+    "bid_limit": null,
+    "stop_conditions": [],
+    "other_constraints": []
+  },
+  "authorization": {
+    "allowed_actions": [],
+    "object_scope": null,
+    "source": null
+  },
+  "connection": {
+    "provider": null,
+    "capability_mapping": {}
+  },
+  "output": {
+    "directory": null
+  },
+  "workspace": {
+    "root": null,
+    "index_document": null,
+    "account_information_document": null,
+    "path_map": {}
+  },
+  "input_status": []
+}

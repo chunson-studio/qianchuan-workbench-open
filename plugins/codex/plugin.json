@@ -1,0 +1,18 @@
+{
+  "$schema": "https://agent-plugins.org/schemas/1.0.0/plugin.schema.json",
+  "name": "qianchuan-workbench",
+  "version": "0.1.0",
+  "description": "本机千川工作台：账户接入、数据核对、场次记录与有授权的操作回读。",
+  "extensions": {
+    "com.openai": {
+      "interface": {
+        "displayName": "千川工作台",
+        "shortDescription": "本机查数、记录与投放操作核验",
+        "longDescription": "本地私发内测候选。账户资料保留在本机；接入不自动创建广告或调度。需 Node.js 22.5+，首次运行由 Agent 安装锁定依赖。",
+        "category": "Productivity",
+        "capabilities": ["Read", "Write"],
+        "defaultPrompt": "先检查千川工作台的本机环境和接入状态，再根据我的任务继续。"
+      }
+    }
+  }
+}

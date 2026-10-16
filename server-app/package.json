@@ -1,0 +1,23 @@
+{
+  "name": "qianchuan-api",
+  "version": "1.4.0",
+  "description": "千川历史数据、素材查询与复盘工作台",
+  "main": "server.js",
+  "scripts": {
+    "start": "node scripts/start-workbench.js",
+    "dev": "node scripts/start-workbench.js",
+    "setup": "node scripts/setup-account.js",
+    "check": "node scripts/start-workbench.js --check --json"
+  },
+  "dependencies": {
+    "better-sqlite3": "^12.11.1",
+    "playwright-core": "1.63.0",
+    "xlsx": "file:vendor/xlsx-0.20.3.tgz"
+  },
+  "engines": {
+    "node": ">=22.5.0"
+  },
+  "allowScripts": {
+    "better-sqlite3@12.11.1": true
+  }
+}

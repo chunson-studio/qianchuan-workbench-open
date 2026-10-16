@@ -1,0 +1,24 @@
+import {test} from 'node:test';
+import assert from 'node:assert/strict';
+import fs from 'node:fs';
+import path from 'node:path';
+import {execFileSync} from 'node:child_process';
+import {testOutputRoot} from './test-output.cjs';
+import {resetLocalGitHistory} from '../tools/reset-local-git-history.mjs';
+const git=(root,...args)=>execFileSync('git',args,{cwd:root,encoding:'utf8',windowsHide:true,stdio:['pipe','pipe','pipe']}).trim();
+test('local reset retains current edits, new files, ignored data and remote config with exactly one commit',()=>{
+  const root=fs.mkdtempSync(path.join(testOutputRoot(),'git-reset-'));
+  git(root,'init','--initial-branch=main');git(root,'config','user.name','Fixture');git(root,'config','user.email','fixture@example.invalid');
+  fs.writeFileSync(path.join(root,'.gitignore'),'private.dat\n');fs.writeFileSync(path.join(root,'app.txt'),'old');
+  git(root,'add','.');git(root,'commit','-m','old');git(root,'branch','old-version');
+  fs.writeFileSync(path.join(root,'app.txt'),'second');git(root,'commit','-am','second');
+  git(root,'remote','add','origin','https://example.invalid/never-contact-this');
+  fs.writeFileSync(path.join(root,'app.txt'),'current');fs.writeFileSync(path.join(root,'新文件.txt'),'new');fs.writeFileSync(path.join(root,'private.dat'),'local-only');
+  const config=fs.readFileSync(path.join(root,'.git/config'));
+  const preview=resetLocalGitHistory({root});assert.equal(preview.applied,false);assert.equal(preview.commits,2);
+  const out=resetLocalGitHistory({root,apply:true,message:'current'});
+  assert.equal(out.commits,1);assert.equal(git(root,'rev-list','--all','--count'),'1');assert.equal(git(root,'branch','--format=%(refname:short)'),'main');
+  assert.equal(git(root,'show','HEAD:app.txt'),'current');assert.equal(git(root,'show','HEAD:新文件.txt'),'new');
+  assert.equal(fs.readFileSync(path.join(root,'private.dat'),'utf8'),'local-only');assert.equal(git(root,'status','--porcelain'),'');
+  assert.deepEqual(fs.readFileSync(path.join(root,'.git/config')),config);assert.equal(out.remote_contacted,false);
+});

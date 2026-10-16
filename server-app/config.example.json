@@ -1,0 +1,22 @@
+{
+  "_comment": "通用空账户模板；Agent 根据用户指令选择读取或操作，工作台负责账户绑定与执行回执。",
+  "host": "127.0.0.1",
+  "port": 18991,
+  "cleanup_enabled": false,
+  "scheduler": {
+    "enabled": false
+  },
+  "qianchuan_accounts": [],
+  "accounts": [],
+  "yuntu_accounts": [],
+  "manual_config": {
+    "avg_order_price": null,
+    "break_even_roi": null,
+    "full_auto_delete": false
+  },
+  "mhs": {
+    "version": "V1-unconfigured",
+    "vocab_file": null
+  },
+  "agent_policy": {}
+}

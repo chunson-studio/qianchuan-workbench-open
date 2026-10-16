@@ -1,0 +1,25 @@
+{
+  "format_version": 1,
+  "name": "qianchuan-ops",
+  "edition": "public_execution_only",
+  "entrypoint": "SKILL.md",
+  "live_account_connection_included": false,
+  "files": {
+    "SKILL.md": "3c5a930bef92dbf06d93fc442f889d52756d56de88836a031e7873b0cb242714",
+    "assets/account-context.template.json": "ffe12156824d80d3480ab7c5086cad2457bf9c240e4b905741f4dacc1fe8c80f",
+    "assets/cost-example.json": "c8c8331aeb18843e8221d7a5e857e19520e19966f6ee2384c0bc643afa367c27",
+    "assets/workspace/任务状态.template.md": "1913da26cb7f746548ec90d9ae3404558f57652d8522d5c95615d950ace5ab1d",
+    "assets/workspace/分析复盘.template.md": "0c34ba80cbec720726047d4851dfd21acd1182686a33b3d4015a05b76c2dde33",
+    "assets/workspace/工作区索引.template.md": "9fac91185784fe15893dfed5e1abd707f054926a97ecf3b1d0ebae4c2333e8d7",
+    "assets/workspace/当前策略.template.md": "b774199d040e3d18999bc94864478fb63082383c8eb3934c6f25c9b9f69e96ba",
+    "assets/workspace/账户资料.template.md": "45dd2994b9b6d341455d96ed375a9ef692ca1152f61e3df594aec30a915fbadf",
+    "evals/test_cost_calc.py": "e917419530132d6d313030876c1ea813f0dedb35b2b34527191bed8c306ee443",
+    "references/定时任务提示词模板.md": "11d9f9359fa74f4fde41a4f434cbb8a4ef0e4bdd46459b2ab4054c1fb3c28e64",
+    "references/工作区与资料准备.md": "0d87c4f53d78b356d66c09dc1c148893c1a49c7517cf2551aaab310d41b113bd",
+    "references/接入与执行.md": "4f4c7781d72c41fb157c26c8ee2852c071e5063545cf20d4fa1046e2afca1f06",
+    "references/新直播间接入与双宿主会话.md": "645d83c12bff5373f809112d2bedb5ad5678764a5b981fcad3688049876bd5eb",
+    "references/脚本索引.md": "7fbd4ca6c2479d492761de649318f01633c626f1079a82ea275526be4ac1919e",
+    "scripts/check_package.py": "7fbacb84e4b6aba7357b0d290fd6e97ee341821541a053bea1d34c45320c2013",
+    "scripts/cost_guarantee_calc.py": "57208a66402ff8053ce28ea120af100753b36a4f38d1a6b3138d30c33e09dac9"
+  }
+}

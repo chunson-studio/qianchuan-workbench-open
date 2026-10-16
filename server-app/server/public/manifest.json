@@ -1,0 +1,16 @@
+{
+  "name": "千川投控",
+  "short_name": "千川投控",
+  "description": "千川直播盯盘与操盘系统",
+  "start_url": "/v4#/",
+  "display": "standalone",
+  "background_color": "#050810",
+  "theme_color": "#050810",
+  "icons": [
+    {
+      "src": "/icon.svg",
+      "sizes": "192x192",
+      "type": "image/svg+xml"
+    }
+  ]
+}

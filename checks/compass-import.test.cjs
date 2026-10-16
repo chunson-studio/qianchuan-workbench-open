@@ -1,0 +1,33 @@
+'use strict';
+const test = require('node:test');
+const assert = require('node:assert/strict');
+const fs = require('node:fs');
+const path = require('node:path');
+const { parseCookieEditor } = require('../server-app/server/lib/cookieImport');
+const { importCompassCredential } = require('../server-app/server/lib/accountOnboarding');
+const row = (domain, value = 'test-only') => ({ domain, hostOnly: true, path: '/', name: 'sessionid', value, session: true });
+test('罗盘导入只接收匹配域名，拒绝千川专用 Cookie 与换行注入', () => {
+  const parse = rows => parseCookieEditor(JSON.stringify(rows), Date.now(), 'compass.jinritemai.com');
+  assert.equal(parse([row('compass.jinritemai.com'), row('example.com', 'unrelated')]), 'sessionid=test-only');
+  assert.throws(() => parse([row('qianchuan.jinritemai.com')]), /不是罗盘/);
+  assert.throws(() => parse([row('compass.jinritemai.com', 'bad\r\nInjected: yes')]), /格式无效/);
+  assert.throws(() => parseCookieEditor(JSON.stringify([row('compass.jinritemai.com')])), /不是千川/);
+});
+test('罗盘凭据只写所选账户，不修改千川凭据或账户配置，未知账户拒绝', async () => {
+  const base = require('./test-output.cjs').testOutputRoot(); fs.mkdirSync(base, {recursive:true});
+  const root = fs.mkdtempSync(path.join(base, 'run-'));
+  const opts = { configPath:path.join(root,'config.json'), scriptsDir:path.join(root,'scripts'), profileDir:path.join(root,'profiles') };
+  const config = JSON.stringify({qianchuan_accounts:[{id:'test_account',name:'Test',aavid:'123456'}]});
+  fs.writeFileSync(opts.configPath,config); fs.mkdirSync(opts.scriptsDir);
+  const qc = path.join(opts.scriptsDir,'cookie_test_account.txt'); fs.writeFileSync(qc,'unchanged');
+  const result = await importCompassCredential('test_account',JSON.stringify([row('compass.jinritemai.com')]),opts);
+  assert.equal(result.saved,true); assert.equal(result.verified,false);
+  assert.equal(fs.readFileSync(path.join(opts.scriptsDir,'compass_cookie_test_account.txt'),'utf8'),'sessionid=test-only');
+  assert.equal(fs.readFileSync(qc,'utf8'),'unchanged'); assert.equal(fs.readFileSync(opts.configPath,'utf8'),config);
+  const scoped = await importCompassCredential('test_account', JSON.stringify([row('compass.jinritemai.com', 'room-only')]), { ...opts, room_id: '60000003789' });
+  assert.equal(scoped.room_id, '60000003789');
+  assert.equal(fs.readFileSync(path.join(opts.scriptsDir,'compass_cookie_test_account_room_60000003789.txt'),'utf8'),'sessionid=room-only');
+  assert.equal(fs.readFileSync(path.join(opts.scriptsDir,'compass_cookie_test_account.txt'),'utf8'),'sessionid=test-only');
+  await assert.rejects(importCompassCredential('test_account', JSON.stringify([row('compass.jinritemai.com')]), { ...opts, room_id: '../escape' }), e=>e.code==='invalid_room');
+  await assert.rejects(importCompassCredential('../unknown',JSON.stringify([row('compass.jinritemai.com')]),opts), e=>e.code==='account_not_found');
+});

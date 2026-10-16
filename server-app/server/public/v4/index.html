@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="zh-CN" data-ui-effects="minimal" data-build="28" data-website-compass="off">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>千川投放数据工作台</title>
+<link rel="manifest" href="/manifest.json">
+<meta name="theme-color" content="#f6f2e9">
+<link rel="apple-touch-icon" href="/icon.svg">
+<link rel="preload" href="/v4/assets/fonts/notoserifsc-ui-500.woff2?v=25" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="/v4/v4.css">
+<link rel="stylesheet" href="/v4/workbench-theme.css?v=28">
+</head>
+<body>
+<canvas id="pulse" aria-hidden="true"></canvas>
+<a class="skip-link" href="#view">跳到主要内容</a>
+
+<header class="top">
+  <div class="brand">千川工作台</div>
+  <nav class="nav" id="nav">
+    <a href="#/overview" data-r="overview">多账号总览</a>
+    <a href="#/onboarding" data-r="onboarding">账号管理</a>
+  </nav>
+  <div class="accts" id="accts"></div>
+  <span class="workspace-scope">全部账户 / 全部直播间</span>
+  <div class="live" id="live"><i></i><span id="liveT">--</span></div>
+  <div class="top-r">
+    <button class="privacy-toggle" id="privacyToggle" type="button" aria-pressed="false" title="隐藏账户名称和各类 ID，保留经营数据"><svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M2 12s3.5-7 10-7 10 7 10 7-3.5 7-10 7S2 12 2 12Z"/><circle cx="12" cy="12" r="3"/><path class="privacy-slash" d="m3 3 18 18"/></svg><span>隐私模式</span></button>
+    <button class="themeToggle" id="themeToggle" title="切换主题">暗夜主题</button>
+    <span class="upd num" id="upd">--</span>
+    <span class="num" id="clock">--:--:--</span>
+  </div>
+</header>
+
+<main class="stage" id="view" tabindex="-1" aria-label="工作台内容"></main>
+
+<script src="/v4/demo-data.js?v=21"></script>
+<script src="/v4/shared.js"></script>
+<script src="/v4/view-effects.js?v=12"></script>
+<script src="/v4/privacy.js?v=19"></script>
+<script src="/v4/v4.js"></script>
+<script src="/v4/account-ui-fixes.js"></script>
+<script src="/v4/workbench-theme.js?v=25"></script>
+<script src="/v4/workbench-art.js?v=24"></script>
+<script>
+  if ('serviceWorker' in navigator && !window.QC_DEMO) {
+    navigator.serviceWorker.register('/sw.js?v=28').catch(err => console.log('SW fail:', err));
+  }
+</script>
+</body>
+</html>

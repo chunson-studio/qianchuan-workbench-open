@@ -1,0 +1,596 @@
+{
+  "liveRoomId": null,
+  "capturedAt": null,
+  "templates": {
+    "topLivingCardRoi2": {
+      "refer": "trial-runtime",
+      "DataSetKey": "roi2_live_analysis_update",
+      "Metrics": [
+        "stat_cost_for_roi2"
+      ],
+      "Dimensions": [
+        "room_icon",
+        "room_name",
+        "room_start_time",
+        "room_end_time",
+        "room_id",
+        "room_with_anchor_show_id"
+      ],
+      "OrderBy": [
+        {
+          "Field": "room_start_time",
+          "Type": 1
+        }
+      ],
+      "Filters": {
+        "ConditionRelationshipType": 1,
+        "Conditions": [
+          {
+            "Field": "advertiser_id",
+            "Operator": 7,
+            "Values": []
+          },
+          {
+            "Field": "room_status",
+            "Operator": 7,
+            "Values": [
+              "2"
+            ]
+          }
+        ]
+      },
+      "PageParams": {
+        "Offset": 0,
+        "Limit": 200
+      },
+      "StartTime": "2026-07-02 00:00:00",
+      "EndTime": "2026-07-02 15:29:45",
+      "aavid": ""
+    },
+    "init": {
+      "DataSetKey": "board_room_detail",
+      "Metrics": [
+        "stat_cost"
+      ],
+      "Dimensions": [
+        "room_icon",
+        "room_name",
+        "room_status",
+        "room_with_anchor_id",
+        "room_with_anchor_name",
+        "room_start_time",
+        "room_end_time",
+        "optimize_goal",
+        "room_with_anchor_show_id",
+        "room_anchor_avatar"
+      ],
+      "StartTime": "2026-07-02 00:00:00",
+      "EndTime": "2026-07-02 23:59:59",
+      "refer": "trial-runtime",
+      "Filters": {
+        "ConditionRelationshipType": 1,
+        "Conditions": [
+          {
+            "Field": "time_filter",
+            "Operator": 7,
+            "Values": [
+              "2"
+            ]
+          },
+          {
+            "Field": "room_id",
+            "Operator": 7,
+            "Values": []
+          },
+          {
+            "Field": "advertiser_id",
+            "Operator": 7,
+            "Values": []
+          }
+        ]
+      },
+      "PageParams": {
+        "Offset": 0,
+        "Limit": 1
+      },
+      "Base": {
+        "Extra": {
+          "refer": "trial-runtime"
+        }
+      }
+    },
+    "commonMetricCard": {
+      "DataSetKey": "board_roi2_overview_conf_next",
+      "Metrics": [
+        "total_order_settle_count_realtime_for_roi2_1h",
+        "total_cost_per_pay_order_settle_realtime_for_roi2_1h",
+        "total_live_pay_order_gpm_realtime_for_roi2",
+        "live_watch_to_pay_rate_for_roi2",
+        "room_pack_online_user_count",
+        "total_show_to_watch_rate_for_roi2",
+        "live_watch_ucount_for_roi2",
+        "stat_cost_for_roi2",
+        "total_prepay_and_pay_settle_realtime_roi2_1h",
+        "total_order_settle_amount_realtime_for_roi2_1h",
+        "total_prepay_and_pay_order_realtime_roi2",
+        "total_pay_order_gmv_realtime_for_roi2",
+        "total_pay_order_count_realtime_for_roi2"
+      ],
+      "Dimensions": [],
+      "PageParams": {
+        "Offset": 0,
+        "Limit": -1
+      },
+      "Filters": {
+        "ConditionRelationshipType": 1,
+        "Conditions": [
+          {
+            "Field": "advertiser_id",
+            "Operator": 7,
+            "Values": []
+          },
+          {
+            "Field": "room_id",
+            "Operator": 7,
+            "Values": []
+          },
+          {
+            "Field": "anchor_id",
+            "Operator": 7,
+            "Values": []
+          }
+        ]
+      },
+      "refer": "trial-runtime",
+      "Base": {
+        "Extra": {
+          "refer": "trial-runtime"
+        }
+      }
+    },
+    "sourceChannel": {
+      "refer": "trial-runtime",
+      "Dimensions": [
+        "combined_first_compass_entrance_code"
+      ],
+      "DataSetKey": "board_roi2_source",
+      "Metrics": [
+        "total_live_watch_cnt_for_roi2",
+        "total_live_pay_amt_for_roi2"
+      ],
+      "Filters": {
+        "Conditions": [
+          {
+            "Field": "advertiser_id",
+            "Values": [],
+            "Operator": 7
+          },
+          {
+            "Field": "anchor_id",
+            "Values": [],
+            "Operator": 7
+          },
+          {
+            "Field": "room_id",
+            "Values": [],
+            "Operator": 7
+          },
+          {
+            "Field": "ignore_zero_dimension_with_fill_dimension",
+            "Values": [
+              "on"
+            ],
+            "Operator": 7
+          }
+        ],
+        "ConditionRelationshipType": 1
+      },
+      "PageParams": {
+        "Offset": 0,
+        "Limit": -1
+      },
+      "Base": {
+        "Extra": {
+          "refer": "trial-runtime"
+        }
+      }
+    },
+    "liveScreenQuery": {
+      "StartTime": "2026-07-02 14:26:36",
+      "EndTime": "2026-07-02 15:29:56",
+      "refer": "trial-runtime",
+      "DataSetKey": "live_analyze_room_list",
+      "Dimensions": [
+        "room_stream_flv_pull_url"
+      ],
+      "Metrics": [
+        "stat_cost"
+      ],
+      "Filters": {
+        "Conditions": [
+          {
+            "Field": "advertiser_id",
+            "Values": [],
+            "Operator": 7
+          },
+          {
+            "Field": "room_id",
+            "Values": [],
+            "Operator": 7
+          },
+          {
+            "Field": "time_filter",
+            "Values": [
+              "2"
+            ],
+            "Operator": 7
+          }
+        ],
+        "ConditionRelationshipType": 1
+      },
+      "PageParams": {
+        "Offset": 0,
+        "Limit": -1
+      },
+      "Base": {
+        "Extra": {
+          "refer": "trial-runtime"
+        }
+      }
+    },
+    "totalTrend": {
+      "DataSetKey": "board_roi2_total_trend_next",
+      "StartTime": "2026-07-02 14:26:36",
+      "EndTime": "2026-07-02 15:29:56",
+      "Metrics": [
+        "total_order_settle_amount_realtime_for_roi2_1h",
+        "stat_real_cost_for_roi2"
+      ],
+      "Dimensions": [
+        "stat_time_5_minute"
+      ],
+      "PageParams": {
+        "Offset": 0,
+        "Limit": -1
+      },
+      "Filters": {
+        "ConditionRelationshipType": 1,
+        "Conditions": [
+          {
+            "Field": "advertiser_id",
+            "Operator": 7,
+            "Values": []
+          },
+          {
+            "Field": "room_id",
+            "Operator": 7,
+            "Values": []
+          }
+        ]
+      },
+      "OrderBy": [
+        {
+          "Field": "stat_time_5_minute",
+          "Type": 1
+        }
+      ],
+      "refer": "trial-runtime",
+      "Base": {
+        "Extra": {
+          "refer": "trial-runtime"
+        }
+      }
+    },
+    "funnelModule": {
+      "refer": "trial-runtime",
+      "DataSetKey": "board_roi2_funnel_core",
+      "Metrics": [
+        "live_show_count_for_roi2",
+        "total_show_to_watch_rate_for_roi2",
+        "live_watch_count_for_roi2",
+        "total_watch_to_product_click_rate_for_roi2",
+        "total_watch_to_pay_rate_realtime_for_roi2",
+        "live_product_click_count_for_roi2",
+        "total_product_click_to_pay_rate_realtime_for_roi2",
+        "total_pay_order_count_for_roi2"
+      ],
+      "Dimensions": [],
+      "Filters": {
+        "Conditions": [
+          {
+            "Field": "advertiser_id",
+            "Values": [],
+            "Operator": 7
+          },
+          {
+            "Field": "room_id",
+            "Values": [],
+            "Operator": 7
+          },
+          {
+            "Field": "anchor_id",
+            "Values": [],
+            "Operator": 7
+          }
+        ],
+        "ConditionRelationshipType": 1
+      },
+      "Base": {
+        "Extra": {
+          "refer": "trial-runtime"
+        }
+      }
+    },
+    "materialLive": {
+      "Dimensions": [
+        "anchor_material_heat_status_v2",
+        "room_name"
+      ],
+      "DataSetKey": "board_roi2_material_performance",
+      "Metrics": [
+        "total_prepay_and_pay_settle_realtime_roi2_1h",
+        "total_order_settle_amount_realtime_for_roi2_1h",
+        "total_prepay_and_pay_order_realtime_roi2",
+        "stat_cost_for_roi2",
+        "total_pay_order_gmv_include_coupon_realtime_for_roi2",
+        "total_pay_order_gmv_include_coupon_rate_realtime_for_roi2",
+        "total_pay_order_count_realtime_for_roi2",
+        "stat_cost_for_roi2_assist"
+      ],
+      "StartTime": "2026-07-02 14:26:36",
+      "EndTime": "2026-07-02 15:29:58",
+      "Filters": {
+        "ConditionRelationshipType": 1,
+        "Conditions": [
+          {
+            "Field": "advertiser_id",
+            "Operator": 7,
+            "Values": []
+          },
+          {
+            "Field": "anchor_id",
+            "Operator": 7,
+            "Values": []
+          },
+          {
+            "Field": "room_id",
+            "Operator": 7,
+            "Values": []
+          },
+          {
+            "Field": "ecp_app_id",
+            "Operator": 7,
+            "Values": [
+              "1"
+            ]
+          },
+          {
+            "Field": "aggregate_smart_bid_type",
+            "Operator": 7,
+            "Values": [
+              "0"
+            ]
+          },
+          {
+            "Field": "roi2_material_type_v3",
+            "Operator": 7,
+            "Values": [
+              "4"
+            ]
+          }
+        ]
+      },
+      "ComparisonParams": {
+        "RatioStartTime": "2026-07-02 13:23:14",
+        "RatioEndTime": "2026-07-02 14:26:36"
+      },
+      "PageParams": {
+        "Limit": -1,
+        "Offset": 0
+      },
+      "refer": "trial-runtime",
+      "Base": {
+        "Extra": {
+          "refer": "trial-runtime"
+        }
+      }
+    },
+    "materialVideo": {
+      "Dimensions": [
+        "material_id",
+        "roi2_material_video_name",
+        "roi2_material_video_play_info",
+        "roi2_material_type_mix_v3",
+        "material_heat_status_v2",
+        "roi2_material_status",
+        "roi2_material_upload_time"
+      ],
+      "DataSetKey": "board_roi2_material_performance_video",
+      "Metrics": [
+        "total_prepay_and_pay_settle_realtime_roi2_1h",
+        "total_order_settle_amount_realtime_for_roi2_1h",
+        "total_prepay_and_pay_order_realtime_roi2",
+        "stat_cost_for_roi2",
+        "total_pay_order_gmv_include_coupon_realtime_for_roi2",
+        "total_pay_order_gmv_include_coupon_rate_realtime_for_roi2",
+        "total_pay_order_count_realtime_for_roi2",
+        "stat_cost_for_roi2_assist"
+      ],
+      "StartTime": "2026-07-02 14:26:36",
+      "EndTime": "2026-07-02 15:29:58",
+      "Filters": {
+        "ConditionRelationshipType": 1,
+        "Conditions": [
+          {
+            "Field": "advertiser_id",
+            "Operator": 7,
+            "Values": []
+          },
+          {
+            "Field": "anchor_id",
+            "Operator": 7,
+            "Values": []
+          },
+          {
+            "Field": "room_id",
+            "Operator": 7,
+            "Values": []
+          },
+          {
+            "Field": "ecp_app_id",
+            "Operator": 7,
+            "Values": [
+              "1"
+            ]
+          },
+          {
+            "Field": "aggregate_smart_bid_type",
+            "Operator": 7,
+            "Values": [
+              "0"
+            ]
+          },
+          {
+            "Field": "roi2_material_type_v3",
+            "Operator": 7,
+            "Values": [
+              "3"
+            ]
+          },
+          {
+            "Field": "marketing_goal",
+            "Operator": 7,
+            "Values": [
+              "2"
+            ]
+          },
+          {
+            "Field": "roi2_material_status",
+            "Operator": 7,
+            "Values": [
+              "1"
+            ]
+          }
+        ]
+      },
+      "ComparisonParams": {
+        "RatioStartTime": "2026-07-02 13:23:14",
+        "RatioEndTime": "2026-07-02 14:26:36"
+      },
+      "PageParams": {
+        "Limit": 10,
+        "Offset": 0
+      },
+      "OrderBy": [
+        {
+          "Field": "stat_cost_for_roi2",
+          "Type": 2
+        }
+      ],
+      "refer": "trial-runtime",
+      "Base": {
+        "Extra": {
+          "refer": "trial-runtime"
+        }
+      }
+    },
+    "materialCarousel": {
+      "Dimensions": [
+        "material_id",
+        "roi2_material_image_agg_name",
+        "roi2_material_image_agg_play_info",
+        "material_heat_status_v2",
+        "roi2_material_status",
+        "roi2_material_upload_time"
+      ],
+      "DataSetKey": "board_roi2_material_performance_video",
+      "Metrics": [
+        "total_prepay_and_pay_settle_realtime_roi2_1h",
+        "total_order_settle_amount_realtime_for_roi2_1h",
+        "total_prepay_and_pay_order_realtime_roi2",
+        "stat_cost_for_roi2",
+        "total_pay_order_gmv_include_coupon_realtime_for_roi2",
+        "total_pay_order_gmv_include_coupon_rate_realtime_for_roi2",
+        "total_pay_order_count_realtime_for_roi2",
+        "stat_cost_for_roi2_assist"
+      ],
+      "StartTime": "2026-07-02 14:26:36",
+      "EndTime": "2026-07-02 15:29:58",
+      "Filters": {
+        "ConditionRelationshipType": 1,
+        "Conditions": [
+          {
+            "Field": "advertiser_id",
+            "Operator": 7,
+            "Values": []
+          },
+          {
+            "Field": "anchor_id",
+            "Operator": 7,
+            "Values": []
+          },
+          {
+            "Field": "room_id",
+            "Operator": 7,
+            "Values": []
+          },
+          {
+            "Field": "ecp_app_id",
+            "Operator": 7,
+            "Values": [
+              "1"
+            ]
+          },
+          {
+            "Field": "aggregate_smart_bid_type",
+            "Operator": 7,
+            "Values": [
+              "0"
+            ]
+          },
+          {
+            "Field": "roi2_material_type_v3",
+            "Operator": 7,
+            "Values": [
+              "6"
+            ]
+          },
+          {
+            "Field": "marketing_goal",
+            "Operator": 7,
+            "Values": [
+              "2"
+            ]
+          },
+          {
+            "Field": "roi2_material_status",
+            "Operator": 7,
+            "Values": [
+              "1"
+            ]
+          }
+        ]
+      },
+      "ComparisonParams": {
+        "RatioStartTime": "2026-07-02 13:23:14",
+        "RatioEndTime": "2026-07-02 14:26:36"
+      },
+      "PageParams": {
+        "Limit": 10,
+        "Offset": 0
+      },
+      "OrderBy": [
+        {
+          "Field": "stat_cost_for_roi2",
+          "Type": 2
+        }
+      ],
+      "refer": "trial-runtime",
+      "Base": {
+        "Extra": {
+          "refer": "trial-runtime"
+        }
+      }
+    }
+  }
+}

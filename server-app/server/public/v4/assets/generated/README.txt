@@ -1,0 +1,1 @@
+Generated raster artwork used by the cozy V4 UI. Binary assets are added through Git blobs; this marker documents the folder.

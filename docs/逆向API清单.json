@@ -1,0 +1,1729 @@
+{
+  "schema_version": 1,
+  "scope": [
+    "server-app/server/lib",
+    "server-app/server/routes",
+    "archive",
+    "docs",
+    "references"
+  ],
+  "verification": "仅静态索引；未访问平台；代码和文档记录不代表接口当前可用或实时；动态构造须另核实",
+  "platform_paths": [
+    {
+      "path": "/ad/api/creation/material/video-list",
+      "kind": "字面路径",
+      "use": "需结合调用参数核验用途",
+      "sources": [
+        {
+          "file": "server-app/server/lib/creativeVideoLibrary.js",
+          "line": 14,
+          "origin": "当前代码"
+        }
+      ]
+    },
+    {
+      "path": "/ad/api/creation/v1/roi2-goal/batch-get-suggestion",
+      "kind": "字面路径",
+      "use": "需结合调用参数核验用途",
+      "sources": [
+        {
+          "file": "server-app/server/lib/chengfang.js",
+          "line": 156,
+          "origin": "当前代码"
+        }
+      ]
+    },
+    {
+      "path": "/ad/api/data/v1/board/roi2Log",
+      "kind": "字面路径",
+      "use": "需结合调用参数核验用途",
+      "sources": [
+        {
+          "file": "server-app/server/lib/liveBoardDetail.js",
+          "line": 6,
+          "origin": "当前代码"
+        },
+        {
+          "file": "server-app/server/lib/liveBoardDetail.js",
+          "line": 83,
+          "origin": "当前代码"
+        }
+      ]
+    },
+    {
+      "path": "/ad/api/data/v1/common/statQuery",
+      "kind": "字面路径",
+      "use": "需结合调用参数核验用途",
+      "sources": [
+        {
+          "file": "server-app/server/lib/qianchuan.js",
+          "line": 400,
+          "origin": "当前代码"
+        },
+        {
+          "file": "server-app/server/lib/qianchuanTabs.js",
+          "line": 1526,
+          "origin": "当前代码"
+        }
+      ]
+    },
+    {
+      "path": "/ad/api/data/v1/creation/batch_update_budget",
+      "kind": "字面路径",
+      "use": "写入实现；不纳入数据查询工具",
+      "sources": [
+        {
+          "file": "server-app/server/lib/qianchuan.js",
+          "line": 890,
+          "origin": "当前代码"
+        }
+      ]
+    },
+    {
+      "path": "/ad/api/data/v1/home/get-recently-stat",
+      "kind": "字面路径",
+      "use": "需结合调用参数核验用途",
+      "sources": [
+        {
+          "file": "server-app/server/lib/qianchuan.js",
+          "line": 1035,
+          "origin": "当前代码"
+        },
+        {
+          "file": "server-app/server/lib/qianchuan.js",
+          "line": 1042,
+          "origin": "当前代码"
+        }
+      ]
+    },
+    {
+      "path": "/ad/api/data/v1/material-analysis/getContentFormulaAndScript",
+      "kind": "字面路径",
+      "use": "需结合调用参数核验用途",
+      "sources": [
+        {
+          "file": "server-app/server/lib/data.js",
+          "line": 878,
+          "origin": "当前代码"
+        }
+      ]
+    },
+    {
+      "path": "/ad/api/data/v1/material-analysis/getContentMaterialAnalysisInfo",
+      "kind": "字面路径",
+      "use": "需结合调用参数核验用途",
+      "sources": [
+        {
+          "file": "server-app/server/lib/data.js",
+          "line": 920,
+          "origin": "当前代码"
+        }
+      ]
+    },
+    {
+      "path": "/ad/api/data/v1/material/get_material_source_list",
+      "kind": "字面路径",
+      "use": "需结合调用参数核验用途",
+      "sources": [
+        {
+          "file": "server-app/server/lib/accountPreflight.js",
+          "line": 45,
+          "origin": "当前代码"
+        }
+      ]
+    },
+    {
+      "path": "/ad/api/data/v1/promotion/ad/live_diagnosis",
+      "kind": "字面路径",
+      "use": "需结合调用参数核验用途",
+      "sources": [
+        {
+          "file": "server-app/server/lib/qianchuan.js",
+          "line": 1023,
+          "origin": "当前代码"
+        },
+        {
+          "file": "server-app/server/lib/qianchuan.js",
+          "line": 1031,
+          "origin": "当前代码"
+        }
+      ]
+    },
+    {
+      "path": "/ad/api/pmc/v1/${endpoint}",
+      "kind": "动态模板",
+      "use": "需结合调用参数核验用途",
+      "sources": [
+        {
+          "file": "server-app/server/lib/qianchuan.js",
+          "line": 673,
+          "origin": "当前代码"
+        }
+      ]
+    },
+    {
+      "path": "/ad/api/pmc/v1/ad/get_overall_marketing_upgrade_ad",
+      "kind": "字面路径",
+      "use": "需结合调用参数核验用途",
+      "sources": [
+        {
+          "file": "server-app/server/lib/qianchuan.js",
+          "line": 1046,
+          "origin": "当前代码"
+        },
+        {
+          "file": "server-app/server/lib/qianchuan.js",
+          "line": 1053,
+          "origin": "当前代码"
+        }
+      ]
+    },
+    {
+      "path": "/ad/api/pmc/v1/ad/product/list",
+      "kind": "字面路径",
+      "use": "需结合调用参数核验用途",
+      "sources": [
+        {
+          "file": "server-app/server/lib/chengfang.js",
+          "line": 198,
+          "origin": "当前代码"
+        }
+      ]
+    },
+    {
+      "path": "/ad/api/pmc/v1/batch_get_uni_porm_material_delete_notice",
+      "kind": "字面路径",
+      "use": "需结合调用参数核验用途",
+      "sources": [
+        {
+          "file": "server-app/server/lib/qianchuan.js",
+          "line": 1108,
+          "origin": "当前代码"
+        }
+      ]
+    },
+    {
+      "path": "/ad/api/pmc/v1/batch_update_budget",
+      "kind": "源码分支展开",
+      "use": "写入实现；不纳入数据查询工具",
+      "sources": [
+        {
+          "file": "server-app/server/lib/qianchuan.js",
+          "line": 668,
+          "origin": "当前代码"
+        }
+      ]
+    },
+    {
+      "path": "/ad/api/pmc/v1/batch_update_operation",
+      "kind": "字面路径",
+      "use": "写入实现；不纳入数据查询工具",
+      "sources": [
+        {
+          "file": "docs/浏览器按钮库.md",
+          "line": 216,
+          "origin": "文档"
+        },
+        {
+          "file": "server-app/server/lib/qianchuan.js",
+          "line": 539,
+          "origin": "当前代码"
+        },
+        {
+          "file": "server-app/server/lib/qianchuan.js",
+          "line": 554,
+          "origin": "当前代码"
+        }
+      ]
+    },
+    {
+      "path": "/ad/api/pmc/v1/batch_update_schedule_type",
+      "kind": "源码分支展开",
+      "use": "写入实现；不纳入数据查询工具",
+      "sources": [
+        {
+          "file": "server-app/server/lib/qianchuan.js",
+          "line": 660,
+          "origin": "当前代码"
+        }
+      ]
+    },
+    {
+      "path": "/ad/api/pmc/v1/compensate/get_list_uni_prom_compensate_info",
+      "kind": "字面路径",
+      "use": "需结合调用参数核验用途",
+      "sources": [
+        {
+          "file": "server-app/server/lib/chengfang.js",
+          "line": 176,
+          "origin": "当前代码"
+        }
+      ]
+    },
+    {
+      "path": "/ad/api/pmc/v1/get_uni_prom_roi_opt_log",
+      "kind": "字面路径",
+      "use": "需结合调用参数核验用途",
+      "sources": [
+        {
+          "file": "server-app/server/lib/qianchuanTabs.js",
+          "line": 1200,
+          "origin": "当前代码"
+        },
+        {
+          "file": "server-app/server/lib/qianchuanTabs.js",
+          "line": 1218,
+          "origin": "当前代码"
+        }
+      ]
+    },
+    {
+      "path": "/ad/api/pmc/v1/roi2-goal/batch-get-suggestion",
+      "kind": "字面路径",
+      "use": "需结合调用参数核验用途",
+      "sources": [
+        {
+          "file": "server-app/server/lib/qianchuanTabs.js",
+          "line": 1223,
+          "origin": "当前代码"
+        },
+        {
+          "file": "server-app/server/lib/qianchuanTabs.js",
+          "line": 1240,
+          "origin": "当前代码"
+        }
+      ]
+    },
+    {
+      "path": "/ad/api/pmc/v1/uni-promotion/ad/${endpoint}",
+      "kind": "动态模板",
+      "use": "需结合调用参数核验用途",
+      "sources": [
+        {
+          "file": "server-app/server/lib/chengfangLive.js",
+          "line": 64,
+          "origin": "当前代码"
+        }
+      ]
+    },
+    {
+      "path": "/ad/api/pmc/v1/uni-promotion/ad/create-uni-prom-assist-task",
+      "kind": "字面路径",
+      "use": "写入实现；不纳入数据查询工具",
+      "sources": [
+        {
+          "file": "server-app/server/lib/qianchuan.js",
+          "line": 1173,
+          "origin": "当前代码"
+        },
+        {
+          "file": "server-app/server/lib/qianchuan.js",
+          "line": 1213,
+          "origin": "当前代码"
+        }
+      ]
+    },
+    {
+      "path": "/ad/api/pmc/v1/uni-promotion/ad/get-assist-task-total-budget",
+      "kind": "字面路径",
+      "use": "需结合调用参数核验用途",
+      "sources": [
+        {
+          "file": "server-app/server/lib/qianchuan.js",
+          "line": 1218,
+          "origin": "当前代码"
+        },
+        {
+          "file": "server-app/server/lib/qianchuan.js",
+          "line": 1231,
+          "origin": "当前代码"
+        }
+      ]
+    },
+    {
+      "path": "/ad/api/pmc/v1/uni-promotion/ad/get_live_roi2_tc_effective_delivery_info_by_date",
+      "kind": "字面路径",
+      "use": "需结合调用参数核验用途",
+      "sources": [
+        {
+          "file": "server-app/server/lib/qianchuanTabs.js",
+          "line": 911,
+          "origin": "当前代码"
+        }
+      ]
+    },
+    {
+      "path": "/ad/api/pmc/v1/uni-promotion/ad/list-optional",
+      "kind": "字面路径",
+      "use": "需结合调用参数核验用途",
+      "sources": [
+        {
+          "file": "server-app/server/lib/qianchuanTabs.js",
+          "line": 849,
+          "origin": "当前代码"
+        }
+      ]
+    },
+    {
+      "path": "/ad/api/pmc/v1/uni-promotion/ad/list-required",
+      "kind": "字面路径",
+      "use": "需结合调用参数核验用途",
+      "sources": [
+        {
+          "file": "server-app/server/lib/chengfang.js",
+          "line": 120,
+          "origin": "当前代码"
+        },
+        {
+          "file": "server-app/server/lib/qianchuanTabs.js",
+          "line": 765,
+          "origin": "当前代码"
+        },
+        {
+          "file": "server-app/server/lib/qianchuanTabs.js",
+          "line": 809,
+          "origin": "当前代码"
+        },
+        {
+          "file": "server-app/server/lib/qianchuanTabs.js",
+          "line": 885,
+          "origin": "当前代码"
+        },
+        {
+          "file": "server-app/server/lib/qianchuanTabs.js",
+          "line": 973,
+          "origin": "当前代码"
+        }
+      ]
+    },
+    {
+      "path": "/ad/api/pmc/v1/uni-promotion/ad/list-summary",
+      "kind": "字面路径",
+      "use": "需结合调用参数核验用途",
+      "sources": [
+        {
+          "file": "server-app/server/lib/chengfang.js",
+          "line": 137,
+          "origin": "当前代码"
+        },
+        {
+          "file": "server-app/server/lib/qianchuanTabs.js",
+          "line": 1018,
+          "origin": "当前代码"
+        }
+      ]
+    },
+    {
+      "path": "/ad/api/pmc/v1/uni-promotion/ad/update-uni-prom-assist-task",
+      "kind": "字面路径",
+      "use": "写入实现；不纳入数据查询工具",
+      "sources": [
+        {
+          "file": "server-app/server/lib/qianchuan.js",
+          "line": 618,
+          "origin": "当前代码"
+        }
+      ]
+    },
+    {
+      "path": "/ad/api/pmc/v1/uni-promotion/ad/update_uni_promotion_roi",
+      "kind": "字面路径",
+      "use": "写入实现；不纳入数据查询工具",
+      "sources": [
+        {
+          "file": "server-app/server/lib/qianchuan.js",
+          "line": 797,
+          "origin": "当前代码"
+        }
+      ]
+    },
+    {
+      "path": "/ad/api/pmc/v1/uni-promotion/material/add-uni-prom-materials",
+      "kind": "字面路径",
+      "use": "写入实现；不纳入数据查询工具",
+      "sources": [
+        {
+          "file": "server-app/server/lib/qianchuan.js",
+          "line": 1302,
+          "origin": "当前代码"
+        }
+      ]
+    },
+    {
+      "path": "/ad/api/pmc/v1/uni-promotion/material/check-ad-material-usage",
+      "kind": "字面路径",
+      "use": "需结合调用参数核验用途",
+      "sources": [
+        {
+          "file": "server-app/server/lib/qianchuan.js",
+          "line": 1271,
+          "origin": "当前代码"
+        }
+      ]
+    },
+    {
+      "path": "/ad/api/pmc/v1/uni-promotion/material/list-optional",
+      "kind": "字面路径",
+      "use": "需结合调用参数核验用途",
+      "sources": [
+        {
+          "file": "server-app/server/lib/qianchuanTabs.js",
+          "line": 1465,
+          "origin": "当前代码"
+        },
+        {
+          "file": "server-app/server/lib/qianchuanTabs.js",
+          "line": 1485,
+          "origin": "当前代码"
+        }
+      ]
+    },
+    {
+      "path": "/ad/api/pmc/v1/uni-promotion/material/list-required",
+      "kind": "字面路径",
+      "use": "需结合调用参数核验用途",
+      "sources": [
+        {
+          "file": "server-app/server/lib/qianchuanTabs.js",
+          "line": 1325,
+          "origin": "当前代码"
+        },
+        {
+          "file": "server-app/server/lib/qianchuanTabs.js",
+          "line": 1429,
+          "origin": "当前代码"
+        }
+      ]
+    },
+    {
+      "path": "/ad/api/pmc/v1/uni-promotion/material/set-opt",
+      "kind": "字面路径",
+      "use": "写入实现；不纳入数据查询工具",
+      "sources": [
+        {
+          "file": "server-app/server/lib/qianchuan.js",
+          "line": 1086,
+          "origin": "当前代码"
+        }
+      ]
+    },
+    {
+      "path": "/ad/api/tool/v1/material/update-video-info",
+      "kind": "字面路径",
+      "use": "写入实现；不纳入数据查询工具",
+      "sources": [
+        {
+          "file": "server-app/server/lib/materialRename.js",
+          "line": 7,
+          "origin": "当前代码"
+        }
+      ]
+    },
+    {
+      "path": "/ad/api/v1/account/daily-budget/get-account-budget",
+      "kind": "字面路径",
+      "use": "需结合调用参数核验用途",
+      "sources": [
+        {
+          "file": "server-app/server/lib/qianchuan.js",
+          "line": 1019,
+          "origin": "当前代码"
+        }
+      ]
+    },
+    {
+      "path": "/ad/api/v1/account/finance/get-adv-balance",
+      "kind": "字面路径",
+      "use": "需结合调用参数核验用途",
+      "sources": [
+        {
+          "file": "server-app/server/lib/qianchuan.js",
+          "line": 1009,
+          "origin": "当前代码"
+        }
+      ]
+    },
+    {
+      "path": "/ad/api/v1/account/user/info",
+      "kind": "字面路径",
+      "use": "需结合调用参数核验用途",
+      "sources": [
+        {
+          "file": "archive/20260920-simplification/server-app/server/lib/browserFallback.js",
+          "line": 96,
+          "origin": "归档"
+        },
+        {
+          "file": "server-app/server/lib/accountDiscovery.js",
+          "line": 47,
+          "origin": "当前代码"
+        },
+        {
+          "file": "server-app/server/lib/accountPreflight.js",
+          "line": 43,
+          "origin": "当前代码"
+        }
+      ]
+    },
+    {
+      "path": "/business_api/shop/live_bigscreen/min_warn",
+      "kind": "字面路径",
+      "use": "需结合调用参数核验用途",
+      "sources": [
+        {
+          "file": "server-app/server/lib/compassScreen.js",
+          "line": 142,
+          "origin": "当前代码"
+        }
+      ]
+    },
+    {
+      "path": "/business_api/shop/user_ans/core_crowd",
+      "kind": "字面路径",
+      "use": "需结合调用参数核验用途",
+      "sources": [
+        {
+          "file": "server-app/server/lib/compassDirect.js",
+          "line": 137,
+          "origin": "当前代码"
+        }
+      ]
+    },
+    {
+      "path": "/compass_api/content_live/shop/live_screen/five_min_data",
+      "kind": "字面路径",
+      "use": "需结合调用参数核验用途",
+      "sources": [
+        {
+          "file": "server-app/server/lib/compassDirect.js",
+          "line": 18,
+          "origin": "当前代码"
+        },
+        {
+          "file": "server-app/server/lib/compassScreen.js",
+          "line": 140,
+          "origin": "当前代码"
+        }
+      ]
+    },
+    {
+      "path": "/compass_api/content_live/shop/live_screen/flow_distribution",
+      "kind": "字面路径",
+      "use": "需结合调用参数核验用途",
+      "sources": [
+        {
+          "file": "server-app/server/lib/compassScreen.js",
+          "line": 145,
+          "origin": "当前代码"
+        }
+      ]
+    },
+    {
+      "path": "/compass_api/content_live/shop/live_screen/flow_trend",
+      "kind": "字面路径",
+      "use": "需结合调用参数核验用途",
+      "sources": [
+        {
+          "file": "server-app/server/lib/compassScreen.js",
+          "line": 144,
+          "origin": "当前代码"
+        }
+      ]
+    },
+    {
+      "path": "/compass_api/content_live/shop/live_screen/portrait_five_min_data",
+      "kind": "字面路径",
+      "use": "需结合调用参数核验用途",
+      "sources": [
+        {
+          "file": "server-app/server/lib/compassScreen.js",
+          "line": 141,
+          "origin": "当前代码"
+        }
+      ]
+    },
+    {
+      "path": "/compass_api/content_live/shop_official/live_screen/live_order",
+      "kind": "字面路径",
+      "use": "需结合调用参数核验用途",
+      "sources": [
+        {
+          "file": "server-app/server/lib/compassDirect.js",
+          "line": 18,
+          "origin": "当前代码"
+        },
+        {
+          "file": "server-app/server/lib/compassScreen.js",
+          "line": 243,
+          "origin": "当前代码"
+        },
+        {
+          "file": "server-app/server/lib/compassScreen.js",
+          "line": 258,
+          "origin": "当前代码"
+        }
+      ]
+    },
+    {
+      "path": "/compass_api/shop/common/homepage/content_detail_v3",
+      "kind": "字面路径",
+      "use": "需结合调用参数核验用途",
+      "sources": [
+        {
+          "file": "server-app/server/lib/doudian.js",
+          "line": 391,
+          "origin": "当前代码"
+        }
+      ]
+    },
+    {
+      "path": "/compass_api/shop/common/homepage/core_index_v3",
+      "kind": "字面路径",
+      "use": "需结合调用参数核验用途",
+      "sources": [
+        {
+          "file": "server-app/server/lib/compassDirect.js",
+          "line": 151,
+          "origin": "当前代码"
+        },
+        {
+          "file": "server-app/server/lib/doudian.js",
+          "line": 200,
+          "origin": "当前代码"
+        },
+        {
+          "file": "server-app/server/lib/doudian.js",
+          "line": 253,
+          "origin": "当前代码"
+        }
+      ]
+    },
+    {
+      "path": "/compass_api/shop/common/homepage/summary_core_index_v3",
+      "kind": "字面路径",
+      "use": "需结合调用参数核验用途",
+      "sources": [
+        {
+          "file": "server-app/server/lib/doudian.js",
+          "line": 356,
+          "origin": "当前代码"
+        }
+      ]
+    },
+    {
+      "path": "/compass_api/shop/live/live_screen/live_base_info",
+      "kind": "字面路径",
+      "use": "需结合调用参数核验用途",
+      "sources": [
+        {
+          "file": "server-app/server/lib/compassRoom.js",
+          "line": 43,
+          "origin": "当前代码"
+        }
+      ]
+    },
+    {
+      "path": "/compass_api/shop/live/live_screen/product",
+      "kind": "字面路径",
+      "use": "需结合调用参数核验用途",
+      "sources": [
+        {
+          "file": "server-app/server/lib/compassDirect.js",
+          "line": 18,
+          "origin": "当前代码"
+        },
+        {
+          "file": "server-app/server/lib/compassScreen.js",
+          "line": 143,
+          "origin": "当前代码"
+        }
+      ]
+    },
+    {
+      "path": "/compass_api/shop/live/live_screen/product_explain_detail",
+      "kind": "字面路径",
+      "use": "需结合调用参数核验用途",
+      "sources": [
+        {
+          "file": "server-app/server/lib/compassScreen.js",
+          "line": 206,
+          "origin": "当前代码"
+        },
+        {
+          "file": "server-app/server/lib/compassScreen.js",
+          "line": 211,
+          "origin": "当前代码"
+        }
+      ]
+    },
+    {
+      "path": "/compass_api/shop/product/product/product_list",
+      "kind": "字面路径",
+      "use": "需结合调用参数核验用途",
+      "sources": [
+        {
+          "file": "server-app/server/routes/compass.js",
+          "line": 123,
+          "origin": "当前代码"
+        }
+      ]
+    },
+    {
+      "path": "/yuntu_biz/api/common/crowdMap/GetAudienceMap",
+      "kind": "字面路径",
+      "use": "需结合调用参数核验用途",
+      "sources": [
+        {
+          "file": "server-app/server/lib/yuntu.js",
+          "line": 264,
+          "origin": "当前代码"
+        }
+      ]
+    },
+    {
+      "path": "/yuntu_common/api/content/trigger_analysis/GetContentMaterialGeneralInfo",
+      "kind": "字面路径",
+      "use": "需结合调用参数核验用途",
+      "sources": [
+        {
+          "file": "server-app/server/lib/yuntu.js",
+          "line": 231,
+          "origin": "当前代码"
+        }
+      ]
+    },
+    {
+      "path": "/yuntu_common/api/content/trigger_analysis/GetContentMaterialTag",
+      "kind": "字面路径",
+      "use": "需结合调用参数核验用途",
+      "sources": [
+        {
+          "file": "server-app/server/lib/yuntu.js",
+          "line": 242,
+          "origin": "当前代码"
+        }
+      ]
+    },
+    {
+      "path": "/yuntu_common/api/content/trigger_analysis/GetContentTopVideo",
+      "kind": "字面路径",
+      "use": "需结合调用参数核验用途",
+      "sources": [
+        {
+          "file": "server-app/server/lib/yuntu.js",
+          "line": 253,
+          "origin": "当前代码"
+        }
+      ]
+    },
+    {
+      "path": "/yuntu_ng/api/v1/AudienceFlowSceneAnalysisV2",
+      "kind": "字面路径",
+      "use": "需结合调用参数核验用途",
+      "sources": [
+        {
+          "file": "server-app/server/lib/yuntu.js",
+          "line": 169,
+          "origin": "当前代码"
+        }
+      ]
+    },
+    {
+      "path": "/yuntu_ng/api/v1/AudienceFlowSceneProfileV2",
+      "kind": "字面路径",
+      "use": "需结合调用参数核验用途",
+      "sources": [
+        {
+          "file": "server-app/server/lib/yuntu.js",
+          "line": 161,
+          "origin": "当前代码"
+        }
+      ]
+    },
+    {
+      "path": "/yuntu_ng/api/v1/AudienceFlowSceneQuery",
+      "kind": "字面路径",
+      "use": "需结合调用参数核验用途",
+      "sources": [
+        {
+          "file": "server-app/server/lib/yuntu.js",
+          "line": 158,
+          "origin": "当前代码"
+        }
+      ]
+    },
+    {
+      "path": "/yuntu_ng/api/v1/FlowSceneAnalysisV2",
+      "kind": "字面路径",
+      "use": "需结合调用参数核验用途",
+      "sources": [
+        {
+          "file": "server-app/server/lib/yuntu.js",
+          "line": 187,
+          "origin": "当前代码"
+        },
+        {
+          "file": "server-app/server/lib/yuntu.js",
+          "line": 194,
+          "origin": "当前代码"
+        }
+      ]
+    },
+    {
+      "path": "/yuntu_ng/api/v1/GetAudienceAssetBig8Profile",
+      "kind": "字面路径",
+      "use": "需结合调用参数核验用途",
+      "sources": [
+        {
+          "file": "server-app/server/lib/yuntu.js",
+          "line": 137,
+          "origin": "当前代码"
+        }
+      ]
+    },
+    {
+      "path": "/yuntu_ng/api/v1/GetAudienceAssetStructure",
+      "kind": "字面路径",
+      "use": "需结合调用参数核验用途",
+      "sources": [
+        {
+          "file": "server-app/server/lib/yuntu.js",
+          "line": 127,
+          "origin": "当前代码"
+        }
+      ]
+    },
+    {
+      "path": "/yuntu_ng/api/v1/get_audience_asset_trend",
+      "kind": "字面路径",
+      "use": "需结合调用参数核验用途",
+      "sources": [
+        {
+          "file": "server-app/server/lib/yuntu.js",
+          "line": 147,
+          "origin": "当前代码"
+        }
+      ]
+    }
+  ],
+  "stat_query_datasets": {
+    "board_roi2_funnel_core": [
+      {
+        "file": "server-app/server/lib/liveBoardTemplates.json",
+        "line": 286,
+        "origin": "当前代码"
+      }
+    ],
+    "board_roi2_material_performance": [
+      {
+        "file": "server-app/server/lib/liveBoardTemplates.json",
+        "line": 329,
+        "origin": "当前代码"
+      }
+    ],
+    "board_roi2_material_performance_video": [
+      {
+        "file": "server-app/server/lib/liveBoardTemplates.json",
+        "line": 408,
+        "origin": "当前代码"
+      },
+      {
+        "file": "server-app/server/lib/liveBoardTemplates.json",
+        "line": 506,
+        "origin": "当前代码"
+      }
+    ],
+    "board_roi2_overview_conf_next": [
+      {
+        "file": "server-app/server/lib/liveBoardTemplates.json",
+        "line": 103,
+        "origin": "当前代码"
+      }
+    ],
+    "board_roi2_source": [
+      {
+        "file": "server-app/server/lib/liveBoardTemplates.json",
+        "line": 156,
+        "origin": "当前代码"
+      }
+    ],
+    "board_roi2_total_trend_next": [
+      {
+        "file": "server-app/server/lib/liveBoardDetail.js",
+        "line": 45,
+        "origin": "当前代码"
+      },
+      {
+        "file": "server-app/server/lib/liveBoardTemplates.json",
+        "line": 242,
+        "origin": "当前代码"
+      }
+    ],
+    "board_room_detail": [
+      {
+        "file": "server-app/server/lib/liveBoardTemplates.json",
+        "line": 51,
+        "origin": "当前代码"
+      }
+    ],
+    "common_overall_roi2_live_product_service_fee": [
+      {
+        "file": "server-app/server/lib/chengfang.js",
+        "line": 217,
+        "origin": "当前代码"
+      }
+    ],
+    "home_cost_uni_prom": [
+      {
+        "file": "server-app/server/lib/browser.js",
+        "line": 17,
+        "origin": "当前代码"
+      },
+      {
+        "file": "server-app/server/routes/homeSplit.js",
+        "line": 49,
+        "origin": "当前代码"
+      }
+    ],
+    "live_analyze_room_list": [
+      {
+        "file": "server-app/server/lib/liveBoardTemplates.json",
+        "line": 202,
+        "origin": "当前代码"
+      }
+    ],
+    "live_roi2_assist_analysis_overview": [
+      {
+        "file": "server-app/server/lib/qianchuanTabs.js",
+        "line": 1038,
+        "origin": "当前代码"
+      },
+      {
+        "file": "server-app/server/lib/qianchuanTabs.js",
+        "line": 1083,
+        "origin": "当前代码"
+      }
+    ],
+    "live_roi2_assist_analysis_video_detail": [
+      {
+        "file": "server-app/server/lib/qianchuanTabs.js",
+        "line": 1124,
+        "origin": "当前代码"
+      }
+    ],
+    "overall_roi_promotion_list_for_live_v2": [
+      {
+        "file": "server-app/server/lib/chengfangLive.js",
+        "line": 7,
+        "origin": "当前代码"
+      }
+    ],
+    "overall_roi_promotion_matrial_tab_video_product": [
+      {
+        "file": "server-app/server/lib/fetchDaily.js",
+        "line": 93,
+        "origin": "当前代码"
+      }
+    ],
+    "overall_roi_promotion_post_overview_for_product": [
+      {
+        "file": "server-app/server/routes/homeSplit.js",
+        "line": 97,
+        "origin": "当前代码"
+      }
+    ],
+    "roi2_boost_show": [
+      {
+        "file": "server-app/server/lib/qianchuanTabs.js",
+        "line": 1176,
+        "origin": "当前代码"
+      },
+      {
+        "file": "server-app/server/lib/qianchuanTabs.js",
+        "line": 1184,
+        "origin": "当前代码"
+      }
+    ],
+    "roi2_live_analysis_update": [
+      {
+        "file": "server-app/server/lib/liveBoardTemplates.json",
+        "line": 7,
+        "origin": "当前代码"
+      },
+      {
+        "file": "server-app/server/lib/qianchuanTabs.js",
+        "line": 647,
+        "origin": "当前代码"
+      }
+    ],
+    "roi2_video_material_analysis": [
+      {
+        "file": "server-app/server/lib/data.js",
+        "line": 329,
+        "origin": "当前代码"
+      },
+      {
+        "file": "server-app/server/lib/data.js",
+        "line": 421,
+        "origin": "当前代码"
+      },
+      {
+        "file": "server-app/server/lib/data.js",
+        "line": 608,
+        "origin": "当前代码"
+      },
+      {
+        "file": "server-app/server/lib/data.js",
+        "line": 721,
+        "origin": "当前代码"
+      },
+      {
+        "file": "server-app/server/lib/lifetime.js",
+        "line": 21,
+        "origin": "当前代码"
+      },
+      {
+        "file": "server-app/server/lib/lifetime.js",
+        "line": 51,
+        "origin": "当前代码"
+      },
+      {
+        "file": "server-app/server/lib/qianchuanTabs.js",
+        "line": 177,
+        "origin": "当前代码"
+      }
+    ],
+    "roi2_video_material_analysis_crow": [
+      {
+        "file": "server-app/server/lib/data.js",
+        "line": 787,
+        "origin": "当前代码"
+      },
+      {
+        "file": "server-app/server/lib/qianchuanTabs.js",
+        "line": 1297,
+        "origin": "当前代码"
+      }
+    ],
+    "roi2_video_material_analysis_insight": [
+      {
+        "file": "server-app/server/lib/data.js",
+        "line": 705,
+        "origin": "当前代码"
+      },
+      {
+        "file": "server-app/server/lib/qianchuanTabs.js",
+        "line": 1252,
+        "origin": "当前代码"
+      }
+    ],
+    "roi2_video_material_analysis_promotion": [
+      {
+        "file": "server-app/server/lib/data.js",
+        "line": 516,
+        "origin": "当前代码"
+      }
+    ],
+    "roi2_video_material_task_analysis_detail": [
+      {
+        "file": "server-app/server/lib/data.js",
+        "line": 833,
+        "origin": "当前代码"
+      }
+    ],
+    "site_promotion_list": [
+      {
+        "file": "server-app/server/lib/qianchuanTabs.js",
+        "line": 865,
+        "origin": "当前代码"
+      }
+    ],
+    "site_promotion_live_combine_heat": [
+      {
+        "file": "server-app/server/lib/qianchuanTabs.js",
+        "line": 942,
+        "origin": "当前代码"
+      },
+      {
+        "file": "server-app/server/lib/qianchuanTabs.js",
+        "line": 1005,
+        "origin": "当前代码"
+      }
+    ],
+    "site_promotion_post_data_video": [
+      {
+        "file": "server-app/server/lib/qianchuanTabs.js",
+        "line": 1365,
+        "origin": "当前代码"
+      },
+      {
+        "file": "server-app/server/lib/qianchuanTabs.js",
+        "line": 1478,
+        "origin": "当前代码"
+      }
+    ],
+    "site_promotion_post_detail_list_assist_task_scene": [
+      {
+        "file": "server-app/server/lib/qianchuanTabs.js",
+        "line": 1560,
+        "origin": "当前代码"
+      }
+    ]
+  },
+  "local_routes": [
+    {
+      "path": "/api/sparkline",
+      "handler": "handleSparkline",
+      "line": 290
+    },
+    {
+      "path": "/api/data",
+      "handler": "handleData",
+      "line": 291
+    },
+    {
+      "path": "/api/overview",
+      "handler": "handleOverview",
+      "line": 292
+    },
+    {
+      "path": "/api/campaign/status",
+      "handler": "handleCampaignStatus",
+      "line": 293
+    },
+    {
+      "path": "/api/campaign/budget",
+      "handler": "handleCampaignBudget",
+      "line": 294
+    },
+    {
+      "path": "/api/campaign/materials",
+      "handler": "handleCampaignMaterials",
+      "line": 295
+    },
+    {
+      "path": "/api/status",
+      "handler": "handleStatus",
+      "line": 296
+    },
+    {
+      "path": "/health/data",
+      "handler": "handleCollectorRecovery",
+      "line": 297
+    },
+    {
+      "path": "/api/collector/recover",
+      "handler": "handleCollectorRecovery",
+      "line": 298
+    },
+    {
+      "path": "/api/version",
+      "handler": "handleVersion",
+      "line": 299
+    },
+    {
+      "path": "/api/workbench-snapshot",
+      "handler": "handleWorkbenchSnapshot",
+      "line": 300
+    },
+    {
+      "path": "/api/health-check",
+      "handler": "handleHealthCheck",
+      "line": 301
+    },
+    {
+      "path": "/api/material-lifetime",
+      "handler": "handleMaterialLifetime",
+      "line": 336
+    },
+    {
+      "path": "/api/material-hourly",
+      "handler": "require",
+      "line": 337
+    },
+    {
+      "path": "/api/material-audience",
+      "handler": "handleMaterialAudience",
+      "line": 338
+    },
+    {
+      "path": "/api/material-refund",
+      "handler": "handleMaterialRefund",
+      "line": 339
+    },
+    {
+      "path": "/api/material-detail",
+      "handler": "handleMaterialDetail",
+      "line": 340
+    },
+    {
+      "path": "/api/material-report",
+      "handler": "handleMaterialReport",
+      "line": 341
+    },
+    {
+      "path": "/api/material-search",
+      "handler": "handleMaterialSearch",
+      "line": 342
+    },
+    {
+      "path": "/api/live-status",
+      "handler": "handleLive",
+      "line": 343
+    },
+    {
+      "path": "/api/live-sessions",
+      "handler": "handleLive",
+      "line": 344
+    },
+    {
+      "path": "/api/live-board",
+      "handler": "handleLive",
+      "line": 345
+    },
+    {
+      "path": "/api/live-collect",
+      "handler": "handleLive",
+      "line": 346
+    },
+    {
+      "path": "/api/live-watch",
+      "handler": "handleLive",
+      "line": 347
+    },
+    {
+      "path": "/api/yuntu-distribution",
+      "handler": "handleYuntu",
+      "line": 348
+    },
+    {
+      "path": "/api/yuntu-flow",
+      "handler": "handleYuntu",
+      "line": 349
+    },
+    {
+      "path": "/api/yuntu-scene-crowd",
+      "handler": "handleYuntu",
+      "line": 350
+    },
+    {
+      "path": "/api/log",
+      "handler": "handleLog",
+      "line": 351
+    },
+    {
+      "path": "/api/today-snapshot",
+      "handler": "handleTodaySnapshot",
+      "line": 352
+    },
+    {
+      "path": "/api/materials/now",
+      "handler": "handleMaterialsNow",
+      "line": 353
+    },
+    {
+      "path": "/api/materials/live",
+      "handler": "handleMaterialsLive",
+      "line": 354
+    },
+    {
+      "path": "/api/materials/new-uploads",
+      "handler": "handleMaterialsNewUploads",
+      "line": 355
+    },
+    {
+      "path": "/api/materials/video-library",
+      "handler": "handleVideoLibrary",
+      "line": 356
+    },
+    {
+      "path": "/api/materials/summary",
+      "handler": "handleSummary",
+      "line": 357
+    },
+    {
+      "path": "/api/balance",
+      "handler": "handleBalance",
+      "line": 358
+    },
+    {
+      "path": "/api/boost-list",
+      "handler": "handleBoostList",
+      "line": 360
+    },
+    {
+      "path": "/api/live-diagnosis",
+      "handler": "handleLiveDiagnosis",
+      "line": 361
+    },
+    {
+      "path": "/api/time",
+      "handler": "handleTime",
+      "line": 362
+    },
+    {
+      "path": "/api/home-stat",
+      "handler": "handleHomeStat",
+      "line": 363
+    },
+    {
+      "path": "/api/upgrade-ad",
+      "handler": "handleUpgradeAd",
+      "line": 364
+    },
+    {
+      "path": "/api/op-log",
+      "handler": "handleOpLog",
+      "line": 365
+    },
+    {
+      "path": "/api/material/delete",
+      "handler": "handleMaterialDelete",
+      "line": 366
+    },
+    {
+      "path": "/api/material/rename",
+      "handler": "handleMaterialRename",
+      "line": 367
+    },
+    {
+      "path": "/api/material/add",
+      "handler": "handleMaterialAdd",
+      "line": 368
+    },
+    {
+      "path": "/api/boost-create",
+      "handler": "handleBoostCreate",
+      "line": 369
+    },
+    {
+      "path": "/api/flow-control",
+      "handler": "handleFlowControl",
+      "line": 370
+    },
+    {
+      "path": "/api/boost-overview",
+      "handler": "handleBoostData",
+      "line": 371
+    },
+    {
+      "path": "/api/boost-trend",
+      "handler": "handleBoostData",
+      "line": 372
+    },
+    {
+      "path": "/api/boost-material-detail",
+      "handler": "handleBoostData",
+      "line": 373
+    },
+    {
+      "path": "/api/boost-support",
+      "handler": "handleBoostData",
+      "line": 374
+    },
+    {
+      "path": "/api/boost-delete",
+      "handler": "handleBoostData",
+      "line": 375
+    },
+    {
+      "path": "/api/boost-opt-log",
+      "handler": "handleBoostData",
+      "line": 376
+    },
+    {
+      "path": "/api/boost-suggest-roi",
+      "handler": "handleBoostData",
+      "line": 377
+    },
+    {
+      "path": "/api/live-replay",
+      "handler": "handleLiveReplay",
+      "line": 378
+    },
+    {
+      "path": "/api/live-board-detail",
+      "handler": "handleLiveBoardDetail",
+      "line": 379
+    },
+    {
+      "path": "/api/live-replay/sessions",
+      "handler": "handleLiveReplay",
+      "line": 380
+    },
+    {
+      "path": "/api/live-dashboard",
+      "handler": "handleLiveDashboard",
+      "line": 381
+    },
+    {
+      "path": "/api/live-summary",
+      "handler": "handleLiveSummary",
+      "line": 382
+    },
+    {
+      "path": "/api/browser-snapshot",
+      "handler": "handleBrowserSnapshot",
+      "line": 383
+    },
+    {
+      "path": "/api/browser-boost",
+      "handler": "handleBrowserBoost",
+      "line": 384
+    },
+    {
+      "path": "/api/offline-reports",
+      "handler": "handleOfflineReports",
+      "line": 385
+    },
+    {
+      "path": "/api/live-trend",
+      "handler": "handleLiveTrend",
+      "line": 386
+    },
+    {
+      "path": "/api/live-cockpit",
+      "handler": "handleLiveCockpit",
+      "line": 387
+    },
+    {
+      "path": "/api/backfill-status",
+      "handler": "handleBackfillStatus",
+      "line": 388
+    },
+    {
+      "path": "/api/home-split",
+      "handler": "handleHomeSplit",
+      "line": 389
+    },
+    {
+      "path": "/api/agent-rounds",
+      "handler": "handleAgentRounds",
+      "line": 390
+    },
+    {
+      "path": "/api/decision-rounds",
+      "handler": "handleDecisionRounds",
+      "line": 391
+    },
+    {
+      "path": "/api/material-lifecycle",
+      "handler": "handleMaterialLifecycle",
+      "line": 392
+    },
+    {
+      "path": "/api/material-hourly",
+      "handler": "handleMaterialHourly",
+      "line": 393
+    },
+    {
+      "path": "/api/agent-memory",
+      "handler": "handleAgentMemory",
+      "line": 394
+    },
+    {
+      "path": "/api/doudian/overview",
+      "handler": "handleDoudianOverview",
+      "line": 395
+    },
+    {
+      "path": "/api/doudian/summary",
+      "handler": "handleDoudianSummary",
+      "line": 396
+    },
+    {
+      "path": "/api/doudian/content",
+      "handler": "handleDoudianContent",
+      "line": 397
+    },
+    {
+      "path": "/api/material-insights",
+      "handler": "handleMaterialInsights",
+      "line": 398
+    },
+    {
+      "path": "/api/material-profile",
+      "handler": "handleMaterialProfile",
+      "line": 399
+    },
+    {
+      "path": "/api/material-content-refresh",
+      "handler": "handleMaterialContentRefresh",
+      "line": 400
+    },
+    {
+      "path": "/api/audience-insight",
+      "handler": "handleMaterialProfile",
+      "line": 401
+    },
+    {
+      "path": "/api/accounts",
+      "handler": "handleAccounts",
+      "line": 403
+    },
+    {
+      "path": "/api/onboarding",
+      "handler": "require",
+      "line": 404
+    },
+    {
+      "path": "/api/accounts/discover",
+      "handler": "handleAccountDiscover",
+      "line": 405
+    },
+    {
+      "path": "/api/config",
+      "handler": "handleConfig",
+      "line": 406
+    },
+    {
+      "path": "/api/diagnose",
+      "handler": "handleDiagnose",
+      "line": 407
+    },
+    {
+      "path": "/api/insights",
+      "handler": "handleInsights",
+      "line": 408
+    },
+    {
+      "path": "/api/pending-ops",
+      "handler": "handlePendingOps",
+      "line": 409
+    },
+    {
+      "path": "/api/pending-ops/approve",
+      "handler": "handlePendingOps",
+      "line": 410
+    },
+    {
+      "path": "/api/pending-ops/reject",
+      "handler": "handlePendingOps",
+      "line": 411
+    },
+    {
+      "path": "/api/cpa-quota",
+      "handler": "handleCpaQuota",
+      "line": 412
+    },
+    {
+      "path": "/api/compass",
+      "handler": "handleCompass",
+      "line": 413
+    },
+    {
+      "path": "/api/compass/refresh",
+      "handler": "handleCompass",
+      "line": 414
+    },
+    {
+      "path": "/api/compass/cookie-status",
+      "handler": "handleCompass",
+      "line": 415
+    },
+    {
+      "path": "/api/v4-overview",
+      "handler": "handleV4Overview",
+      "line": 416
+    },
+    {
+      "path": "/api/compass/ask",
+      "handler": "handleCompass",
+      "line": 417
+    },
+    {
+      "path": "/api/compass/goods",
+      "handler": "handleCompass",
+      "line": 418
+    },
+    {
+      "path": "/api/compass/videos",
+      "handler": "handleCompass",
+      "line": 419
+    },
+    {
+      "path": "/api/compass/screen",
+      "handler": "handleCompass",
+      "line": 420
+    },
+    {
+      "path": "/api/compass/product-detail",
+      "handler": "handleCompass",
+      "line": 421
+    },
+    {
+      "path": "/api/compass/live-orders",
+      "handler": "handleCompass",
+      "line": 422
+    },
+    {
+      "path": "/api/material-scorecards",
+      "handler": "handleRetiredMhs",
+      "line": 423
+    },
+    {
+      "path": "/api/agent-round-view",
+      "handler": "require",
+      "line": 424
+    },
+    {
+      "path": "/api/creator-brief",
+      "handler": "require",
+      "line": 425
+    },
+    {
+      "path": "/api/mhs/versions",
+      "handler": "handleRetiredMhs",
+      "line": 426
+    },
+    {
+      "path": "/api/mhs/versions/activate",
+      "handler": "handleRetiredMhs",
+      "line": 427
+    },
+    {
+      "path": "/api/mhs/versions/diff",
+      "handler": "handleRetiredMhs",
+      "line": 428
+    },
+    {
+      "path": "/api/chengfang/overview",
+      "handler": "handleChengfang",
+      "line": 429
+    },
+    {
+      "path": "/api/chengfang/live",
+      "handler": "handleChengfang",
+      "line": 430
+    },
+    {
+      "path": "/api/chengfang/dashboard",
+      "handler": "handleChengfang",
+      "line": 431
+    },
+    {
+      "path": "/api/chengfang/products",
+      "handler": "handleChengfang",
+      "line": 432
+    },
+    {
+      "path": "/api/probe",
+      "handler": "handleProbe",
+      "line": 433
+    }
+  ],
+  "archive_notes": [
+    {
+      "path": "archive/20260920-simplification/server-app/server/routes/boostTimeAnalysis.js",
+      "type": "本地追投时段统计，不是平台接口"
+    },
+    {
+      "path": "archive/20260920-simplification/server-app/server/lib/reports.js",
+      "type": "空报告函数，不计为已实现查询"
+    },
+    {
+      "path": "archive/20260920-simplification/server-app/server/lib/compassWb.js",
+      "type": "旧浏览器桥接，不计为独立平台接口"
+    }
+  ]
+}
