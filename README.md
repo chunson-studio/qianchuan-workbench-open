@@ -1,20 +1,43 @@
-# 千川通用执行工作台
+# 千川工作台
 
-面向 Agent 的千川浏览器与本机 API 工具集。包含网页工作台、原始数据读取、素材查询、指定参数操作、批量执行、CLI、后台连接和断线接续。
+**面向 AI Agent 的千川直播运营工具集**
 
-**不含作者账户、凭据、经营记录和私有投放策略。** 所有业务参数由使用者提供。安装不会自动投放或创建调度。策略评分、自动选材、止损和扩量建议未开放；相关接口明确返回不支持或 `strategy_status: not_included`，不代表经营正常。
+千川工作台将账户接入、数据读取、任务操作与状态接续整合到本地工作区。运营人员可以通过 Agent 按自己的经营规则完成日常操作；开发者可以复用 CLI、浏览器脚本和本机 API，构建适合业务的工作流程。
 
-## 给 Agent 使用
+[快速开始](#快速开始) · [使用文档](docs/使用说明.md) · [开发接入](#开发接入) · [验证范围](VERIFICATION.md)
 
-下载或克隆本仓库，在 Codex 等支持本地文件和命令的客户端中打开项目，然后发送：
+## 核心功能
 
-> 请读取 AGENTS.md 和 AGENT_START.md，开始部署。使用我自己的账户和经营规则；先验证读取，操作后按原对象回读。不要删除主计划，不要改任务默认名称。
+| 功能 | 说明 |
+| --- | --- |
+| 数据读取 | 读取直播场次、任务列表和原始指标，检查筛选、分页及数据完整性。 |
+| 素材与历史查询 | 查询素材、历史数据和原始报表，为选材与复盘提供数据。 |
+| 任务操作 | 按指定对象和参数创建、暂停、恢复任务及调整预算等参数，支持批量执行与结果回读。 |
+| 多账户管理 | 显式绑定账户、主计划和场次，分别保存各账户的业务状态与连接信息。 |
+| 会话接续 | 提供后台连接复用、断线诊断和恢复入口，保留待核结果，避免重复提交。 |
+| Agent 接入 | 提供部署入口、Skill、配置模板和脚本索引，支持在本地 Agent 客户端中使用。 |
 
-Agent 负责检查环境和安装依赖；需要本人登录或浏览器许可时再由使用者操作。账户资料仅保存在本机，不能发进聊天或提交到 Git。
+典型流程：**绑定账户与场次 → 读取数据 → 按业务规则判断 → 执行操作 → 回读核验**。
 
-## 手动启动
+## 快速开始
 
-需要 Node.js 22.5 或更新的受支持版本。Windows 可双击「开始使用.cmd」。终端可运行：
+### 通过 Agent 部署
+
+1. 下载或克隆仓库，在 Codex 等支持本地文件和命令执行的客户端中打开项目文件夹。
+2. 向 Agent 发送以下指令：
+
+   > 请读取 AGENTS.md 和 AGENT_START.md，在本机完成部署。首次接入先核对账户、主计划与场次，使用我提供的经营规则，操作后回读核验。保留主计划和任务默认名称。
+
+3. Agent 检查环境、安装依赖并引导账户接入。需要登录或浏览器连接许可时，由使用者本人完成。
+4. 完成读取与操作核验后，按业务需要配置多账户、后台连接或定时任务。
+
+部署流程见 [AGENT_START.md](AGENT_START.md)，日常使用见 [使用说明](docs/使用说明.md)。
+
+### 手动启动
+
+需要 **Node.js 22.5 或更新的受支持版本**。当前安装与启动流程已在 Windows 上验证。Windows 用户也可双击根目录的 `开始使用.cmd`。
+
+在仓库根目录执行：
 
 ```sh
 npm ci
@@ -23,28 +46,44 @@ npm run check
 npm start
 ```
 
-以命令实际返回的本机 URL 为准；打开账户接入页，登录并核对自己的账户和主计划。首次启动为空账户，后台业务采集默认不启用。已有登录或本机配置应续接，不覆盖。
+打开启动结果中显示的本机地址，完成账户接入。首次启动为空账户；已有配置按接续流程使用。定时任务和真实投放由使用者另行配置与授权。
 
-## 包含什么
+## 配置与运行
 
-| 能力 | 入口 |
+**经营规则独立配置。** 项目提供数据和操作能力；预算、ROI 口径、触发条件等业务参数由使用者在本地工作区维护。自动评分、选材及止损扩量规则需要自行定义。
+
+**账户资料本地管理。** 登录状态、浏览器配置和经营记录保存在使用者本机。凭据应保留在私有配置中，避免提交到 Git 或粘贴到聊天。
+
+**操作结果逐项核验。** 每次操作绑定明确的账户、主计划、场次和任务；结果不明确时核对原请求，连接恢复后继续处理待核项。具体执行约定见 [Agent 入口](AGENTS.md)。
+
+## 开发接入
+
+| 入口 | 用途 |
 | --- | --- |
-| 安装、工作区与 Skill | `tools/setup.cjs`、`tools/connect-client.cjs`、`tools/init-workspace.cjs` |
-| 官方 Playwright CLI 接入 | `tools/run-qc-playwright-cli.cjs` |
-| 原生后台、客户端与恢复 | `tools/start-qc-native-session.cjs`、`tools/qc-native-session-client.cjs` |
-| 扩展后台与多账户绑定 | `tools/start-qc-extension-session.cjs` |
-| 完整任务池读取、分页与并发 | `tools/read-qc-control-*.playwright.cjs` |
-| 浏览器批量、参数编辑和素材表单 | `tools/qc-native-operations.cjs`、`tools/browser-actions/` |
-| API、历史查询、原始报表 | `server-app/server/routes/`、`server-app/server/lib/qianchuan.js` |
-| 网页工作台 | `server-app/server/public/v4/` |
-| 通用 Skill、模板和脚本索引 | `skills/qianchuan-ops/` |
+| `tools/run-qc-playwright-cli.cjs` | Playwright CLI 接入。 |
+| `tools/start-qc-native-session.cjs`、`tools/qc-native-session-client.cjs` | 原生浏览器后台与客户端。 |
+| `tools/start-qc-extension-session.cjs` | 扩展通道后台与多账户绑定。 |
+| `tools/qc-native-operations.cjs`、`tools/browser-actions/` | 页面操作、批量执行和表单处理。 |
+| `server-app/server/routes/` | 本机 API、历史查询与报表。 |
+| `server-app/server/public/v4/` | 网页工作台。 |
+| `skills/qianchuan-ops/` | Agent Skill、模板与脚本索引。 |
 
-通道按所用客户端的能力与权限选择。CLI、MCP和浏览器扩展不是同一个接口；换通道后重新核验身份和未决原请求，不能重放未知提交。每次操作显式绑定账户、主计划、场次和任务，不能跟随当前活动标签。
+调用参数、前置条件和验证范围见 [脚本索引](skills/qianchuan-ops/references/脚本索引.md)。各浏览器通道按客户端能力配置，接入后核对账户身份和实际操作结果。
 
-## 验证与维护
+## 测试与验证
 
-运行 `npm test` 执行公开版离线回归。覆盖范围和限制见 [验证记录](VERIFICATION.md)。合成测试通过不表示任何使用者的真实账户已通过验收；首次使用要逐项验证读取、授权操作及回读。
+```sh
+npm test
+```
 
-[使用说明](docs/使用说明.md) · [脚本索引](skills/qianchuan-ops/references/脚本索引.md) · [公开范围](审核说明.md) · [第三方许可](THIRD-PARTY-NOTICES.md)
+当前版本的离线回归结果为 **1204 项通过、0 项失败、1 项宿主测试未启用**，并已完成全新依赖安装和空账户网页启动验证。详细环境、覆盖范围与未执行项见 [验证记录](VERIFICATION.md)。
 
-本项目为非官方工具；平台页面和接口变化时可能需要维护。代码使用 MIT 许可，第三方资源保留各自许可。
+实际账户部署需进一步验证浏览器连接、平台数据读取、授权操作及结果回读；多账户与断线恢复按实际运行环境分别验收。
+
+## 反馈与贡献
+
+欢迎通过 [Issues](https://github.com/zhandaxian996-crypto/qianchuan-workbench-open/issues) 提交问题或建议，通过 Pull Request 改进文档、适配和通用能力。问题反馈请附运行环境、复现步骤及脱敏后的错误信息。
+
+## 许可
+
+本项目是独立开发的非官方工具，采用 [MIT License](LICENSE)。依赖及资源的许可见 [第三方许可](THIRD-PARTY-NOTICES.md)。版本范围见 [发行说明](审核说明.md)。

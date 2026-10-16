@@ -2,7 +2,7 @@
   "name": "qianchuan-workbench-open",
   "version": "0.1.0",
   "private": true,
-  "description": "千川通用执行工作台：浏览器、API、CLI、批量操作与后台恢复，不含私有账户和投放策略",
+  "description": "面向 AI Agent 的千川直播运营工具集，提供数据读取、批量操作、多账户会话管理与 CLI 接入，支持本地部署。",
   "main": "src/index.cjs",
   "license": "MIT",
   "engines": {
