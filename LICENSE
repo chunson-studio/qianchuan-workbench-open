@@ -1,21 +1,50 @@
-MIT License
+千川工作台免费自用许可证 1.0
+Qianchuan Workbench Free Self-Use License 1.0
 
 Copyright (c) 2026 Qianchuan Workbench contributors
 
-Permission is hereby granted, free of charge, to any person obtaining a copy
-of this software and associated documentation files (the "Software"), to deal
-in the Software without restriction, including without limitation the rights
-to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
-copies of the Software, and to permit persons to whom the Software is
-furnished to do so, subject to the following conditions:
+一、适用范围与定义
 
-The above copyright notice and this permission notice shall be included in all
-copies or substantial portions of the Software.
+本许可证适用于随附本许可证发布的千川工作台原创代码、脚本和文档，以及包含其受著作权保护部分的修改版、衍生版本和打包版本，统称“本软件”。另行标明许可的第三方组件不适用本许可证。
 
-THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
-IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
-FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
-AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
-LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
-OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
-SOFTWARE.
+“使用者”是使用本软件的个人或组织。“自有店铺”是使用者本人或其所属公司自行经营、承担经营责任并享有经营收益的店铺及其直播间、广告账户。受客户委托管理的店铺或账户不属于自有店铺；客户提供账户权限、签署服务合同或将账户托管给使用者，不改变这一点。
+
+二、免费授予的权利
+
+在遵守本许可证的前提下，各著作权人就其有权许可的部分，免费授予使用者以下非独占权利：
+
+1. 查看、下载、复制、学习、研究、测试和修改本软件。
+2. 在本机或自行控制的服务器部署本软件，用于自有店铺的广告投放、直播运营和内部数据分析；允许同时管理多个自有店铺，也允许自有店铺从上述经营中获利。
+3. 由使用者本人、所属公司的内部员工使用本软件完成上述内部工作。内部员工正常领取工资，不视为本许可证禁止的收费部署或代运营。
+4. 免费分享本软件的原版或修改版，包括公开 Fork、提交贡献和无偿分发。分享时须保留本许可证、原有著作权和第三方许可声明，并对修改作出说明；不得把本软件或其受保护部分改为允许第三条所列用途的许可。未另行标明许可的原创贡献按本许可证提供，不因此转让著作权。
+
+三、禁止用途
+
+本许可证不授予以下权利；未经相关著作权人另行明确书面许可，不得实施：
+
+1. 转卖、出租或有偿分发本软件、其修改版、衍生版本或包含其受保护部分的安装包、镜像、脚本及访问权限；也不得通过捆绑销售、付费会员或其他收费项目变相销售本软件。
+2. 向第三方收取本软件安装、配置、部署、迁移或代为搭建的费用。将这些费用改称服务费、咨询费、课程费或其他名称，不改变其属于收费部署的性质；不涉及本软件部署交付的独立教学内容不因此自动被禁止。
+3. 使用本软件为非自有店铺提供代运营、代投放、账户托管或代为执行广告调控的服务，无论是否收费；以客户名义运行或由客户提供账户权限，同样适用。
+4. 将本软件或其受保护部分做成、集成到或用于提供面向第三方的收费平台、收费 SaaS、收费 API 或收费托管工具，包括订阅、按量、会员、服务费或佣金抽成等形式。为自有店铺搭建仅供内部使用的平台不属于此项禁止用途。
+
+本许可证不禁止使用者购买通用电脑、服务器、网络、云计算或 AI 服务用于自有店铺；这些供应商未因此获得收费部署本软件、代运营或转售本软件功能的权利。一般交流、问题反馈和不涉及代运营的无偿安装帮助不属于收费部署。
+
+四、第三方权利与保留权利
+
+第三方依赖、字体、资源及其独立组件继续适用各自许可证，详见 THIRD-PARTY-NOTICES.md；不得用本许可证取消第三方许可证已授予的权利。
+
+未明确授予的权利由相应权利人保留。本许可证不授予平台账户、商标或第三方服务的使用权限，不代表任何平台的认可。使用者须自行取得账户权限，并遵守适用法律和相关平台规则。
+
+五、版本与既有许可
+
+本许可证适用于随附本许可证发布的版本及其中依本许可证提供的内容。此前版本已经有效授予的许可，不因本次许可证变更而自动撤销；本许可证不宣称追溯改变旧版本的授权。取得旧版的权利不自动扩大为对新版新增受保护内容的授权。
+
+六、违反许可与责任
+
+违反本许可证的使用不在授权范围内。使用者须停止未经许可的行为；再次取得授权须获得相关权利人的明确许可。法律赋予且不能由合同排除的权利不受本条限制。
+
+在适用法律允许的最大范围内，本软件按现状提供，不作适销性、特定用途适用性、不侵权、持续可用性或经营收益的保证。使用者自行决定投放规则、预算和操作并承担相应经营风险。除法律不允许排除的责任外，作者和著作权人不对因本软件的使用或无法使用而产生的损失承担责任。
+
+七、许可性质
+
+本许可证是允许源码公开及免费自用、限制对外商业服务的项目专用许可证，不是 MIT、GPL、AGPL 或 OSI 批准的开源许可证。中文条款为本许可证的正式文本；README 和使用说明仅作摘要，具体授权以本许可证为准。

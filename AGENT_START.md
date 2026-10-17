@@ -1,5 +1,7 @@
 # 首次部署与接续
 
+部署用途须符合[免费自用许可证](LICENSE)：允许自有店铺免费使用，禁止转卖、收费部署、代运营和收费平台；具体场景见[使用说明](docs/使用说明.md#许可与使用范围)。
+
 1. 读取 AGENTS.md 和使用者当前任务。检查已有配置与工作区，先续接可用环境。
 2. 在仓库根运行 `node tools/setup.cjs --check --json`。缺依赖时由 Agent 安装；可手动执行 `npm ci` 与 `npm --prefix server-app ci`。
 3. 运行 `node tools/setup.cjs --json`，以返回的 URL、账户接入地址、Skill 入口和下一步为准。启动为空账户，业务后台默认关闭。
